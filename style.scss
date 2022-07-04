@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Qisharon';
+  src: url('../assets/fonts/Qisharon-Regular.eot');
+  src: url('../assets/fonts/Qisharon-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../assets/fonts/Qisharon-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Qisharon-Regular.woff') format('woff'),
+      url('../assets/fonts/Qisharon-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import './scss/variables';
+@import './scss/numbers';
+@import './scss/hero';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

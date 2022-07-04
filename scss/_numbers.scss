@@ -1,0 +1,84 @@
+.numbers {
+
+  padding: 70px 0 130px;
+  background: url('../assets/img/palm-left.png') no-repeat center left,
+              url('../assets/img/palm-right.png') no-repeat center right;
+  background-color: $color-bg-light;
+
+  &__title {
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $color-text;
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 60px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.number {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__amout {
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 108px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $color-text;
+    text-shadow: 0px 0px 59px rgba(255, 143, 175, 0.38);
+    & .little {
+      font-size: 40px;
+      line-height: 100%;
+    }
+  }
+
+  &__units {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 43px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-bg-light;
+    text-shadow: 0px 0px 60.8053px rgba(27, 190, 227, 0.32);
+    padding: 5px 15px;
+    background: $gradient-project;
+    border-radius: 5px;
+  }
+
+  &__description {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 143.7%;
+    color: $color-text;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
