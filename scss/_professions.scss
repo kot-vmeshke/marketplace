@@ -1,0 +1,103 @@
+.prof {
+
+  padding: 65px 0;
+  background: url('../assets/img/palm-right-prof.png') no-repeat center left,
+              url('../assets/img/palm-left-prof.png') no-repeat center right;
+  background-color: $color-bg-light;
+  @media (max-width: 1024px) {
+    background: url('../assets/img/palm-right-prof.png') no-repeat bottom left,
+                url('../assets/img/palm-left-prof.png') no-repeat top right;
+    background-color: $color-bg-light;
+  }
+
+  &__title {
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $color-text;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: 588px;
+  }
+
+  &__content-wrap {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__timer {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    background: linear-gradient(81.3deg, #232323 17.41%, #343434 48.15%, #232323 80.25%);
+    border-radius: 16px;
+  }
+}
+
+.profession {
+
+  &__img {
+
+  }
+
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__btn {
+
+    &_sale {
+    }
+
+    &_details {
+    }
+  }
+
+  &__btn-span {
+  }
+
+  &__btn-text {
+  }
+}
+.assistant {
+}
+.reserch {
+}
+.project {
+}
+.timer {
+
+  &__title {
+  }
+
+  &__content {
+  }
+
+  &__sep {
+  }
+
+  &__descr {
+
+    &_1 {
+    }
+
+    &_2 {
+    }
+
+    &_3 {
+    }
+
+    &_4 {
+    }
+  }
+}
+

@@ -4,6 +4,11 @@
   background: url('../assets/img/palm-left.png') no-repeat center left,
               url('../assets/img/palm-right.png') no-repeat center right;
   background-color: $color-bg-light;
+  @media (max-width: 1024px) {
+    background: url('../assets/img/palm-left.png') no-repeat bottom left,
+                url('../assets/img/palm-right.png') no-repeat top right;
+    background-color: $color-bg-light;
+  }
 
   &__title {
     font-family: $font-accent;

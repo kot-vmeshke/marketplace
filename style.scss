@@ -13,11 +13,15 @@
 @import './scss/variables';
 @import './scss/numbers';
 @import './scss/hero';
+@import './scss/professions';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  scroll-behavior: smooth;
 }
 .container {
   width: 100%;

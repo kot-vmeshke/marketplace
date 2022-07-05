@@ -8,6 +8,7 @@
     width: 100%;
     height: auto;
     bottom: -2px;
+    z-index: 5;
   }
 
   &__date-wrap {
@@ -236,9 +237,9 @@
     &.header__logo {
       padding: 0;
       display: block;
-      background: url('../assets/svg/logo.svg') no-repeat center;
-      width: 155px;
-      height: 40px; 
+      background: url('../assets/svg/logo.svg') no-repeat;
+      width: 163px;
+      height: 48px;
     }
 
   }

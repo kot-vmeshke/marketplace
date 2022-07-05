@@ -11,6 +11,12 @@
   background: url("../assets/img/palm-left.png") no-repeat center left, url("../assets/img/palm-right.png") no-repeat center right;
   background-color: #FBFBFB;
 }
+@media (max-width: 1024px) {
+  .numbers {
+    background: url("../assets/img/palm-left.png") no-repeat bottom left, url("../assets/img/palm-right.png") no-repeat top right;
+    background-color: #FBFBFB;
+  }
+}
 .numbers__title {
   font-family: "Qisharon", sans-serif;
   font-style: normal;
@@ -96,6 +102,7 @@
   width: 100%;
   height: auto;
   bottom: -2px;
+  z-index: 5;
 }
 .hero__date-wrap {
   display: flex;
@@ -318,9 +325,9 @@
 .nav__link.header__logo {
   padding: 0;
   display: block;
-  background: url("../assets/svg/logo.svg") no-repeat center;
-  width: 155px;
-  height: 40px;
+  background: url("../assets/svg/logo.svg") no-repeat;
+  width: 163px;
+  height: 48px;
 }
 
 .team {
@@ -371,10 +378,50 @@
   font-weight: 300;
 }
 
+.prof {
+  padding: 65px 0;
+  background: url("../assets/img/palm-right-prof.png") no-repeat center left, url("../assets/img/palm-left-prof.png") no-repeat center right;
+  background-color: #FBFBFB;
+}
+@media (max-width: 1024px) {
+  .prof {
+    background: url("../assets/img/palm-right-prof.png") no-repeat bottom left, url("../assets/img/palm-left-prof.png") no-repeat top right;
+    background-color: #FBFBFB;
+  }
+}
+.prof__title {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #323232;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  max-width: 588px;
+}
+.prof__content-wrap {
+  display: flex;
+  gap: 40px;
+}
+.prof__timer {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  background: linear-gradient(81.3deg, #232323 17.41%, #343434 48.15%, #232323 80.25%);
+  border-radius: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
 }
 
 .container {
