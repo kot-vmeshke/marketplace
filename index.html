@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="./scripts/timer.js" defer></script>
 </head>
 <body>
   <main class="main">
@@ -24,9 +25,10 @@
               <li class="nav__item"><a href="#" class="nav__link">Подарки</a></li>
             </ul>
           </nav>
+          <a href="#" class="header__logo header__logo_1024"></a>
         </header>
         <div class="hero__date-wrap">
-          <p class="hero__time">Длительность обучения <span class="hero__time-span">1 - 2 месяца</span></p>
+          <p class="hero__time">Длительность обучения <span class="hero__time-span">1-2 месяца</span></p>
           <p class="hero__time">Старт обучения <span class="hero__time-span">11 августа</span></p>
         </div>
         <h1 class="hero__title">Marketplace<span class="hero__title-span">Academica</span></h1>
@@ -34,6 +36,9 @@
           <div class="team">Возможность попасть в&nbsp;команду бренда <span class="team__span">Letique Cosmetics</span></div>
           <div class="employment">Рекомендации и&nbsp;помощь в&nbsp;трудоустройстве <span class="employment__span">от&nbsp;Паши Шевченко</span></div>
           <img src="./assets/img/heroes.png" alt="" width="1000" class="hero__img" />
+          <div class="img-1024__wrap">
+            <img src="./assets/img/heroes_501.png" alt="" width="500" class="hero__img_1024" />
+          </div>
           <a href="#" class="hero__instagrm hero__instagrm_artem"><img src="./assets/svg/instagram.svg" alt="" width="30"> artem_chek</a>
           <a href="#" class="hero__instagrm hero__instagrm_ler"><img src="./assets/svg/instagram.svg" alt="" width="30">ler_chek</a>
           <a href="#" class="hero__instagrm hero__instagrm_pavel"><img src="./assets/svg/instagram.svg" alt="" width="30">pavel_shauchenka</a>
@@ -47,7 +52,7 @@
     </section>
     <section class="numbers" id="numbers">
       <div class="container numbers__container">
-        <h2 class="numbers__title">Профессия в цифрах!</h2>
+        <h2 class="numbers__title">Профессия в&nbsp;цифрах!</h2>
         <div class="numbers__content">
           <div class="number">
             <span class="number__amout">20.000</span>
@@ -65,7 +70,7 @@
             <span class="number__description">клуба Паши Шевченко ищут сотрудника из числа наших учеников</span>
           </div>
           <div class="number">
-            <span class="number__amout">2 - 3</span>
+            <span class="number__amout">2-3</span>
             <span class="number__units">проекта</span>
             <span class="number__description">одновременно может вести один менеджер</span>
           </div>
@@ -84,12 +89,12 @@
     </section>
     <section class="prof" id="prof">
       <div class="container prof__container">
-        <h2 class="prof__title">Какую профессию ты сможешь получить?</h2>
+        <h2 class="prof__title">Какую профессию ты&nbsp;сможешь получить?</h2>
         <div class="prof__content-wrap">
           <div class="profession assistant">
             <img src="./assets/img/assist__img.png" alt="" class="profession__img">
             <div class="profession__content">
-              <div class="profession__title">Ассистент + аккаунт-менеджер Wildberries </div>
+              <div class="profession__title">Ассистент +<br>аккаунт-менеджер<br>Wildberries</div>
               <ul class="profession__list">
                 <li>Занимается созданием карточек: описание, публикация фото и видео-контента</li>
                 <li>Анализирует и мониторит акции и цены на площадке</li>
@@ -106,15 +111,15 @@
           <div class="profession reserch">
             <img src="./assets/img/res__img.png" alt="" class="profession__img">
             <div class="profession__content">
-              <div class="profession__title">Ассистент + аккаунт-менеджер Wildberries </div>
+              <div class="profession__title">Research manager +<br>Специалист отдела<br>закупок </div>
               <ul class="profession__list">
-                <li>Занимается созданием карточек: описание, публикация фото и видео-контента</li>
-                <li>Анализирует и мониторит акции и цены на площадке</li>
-                <li>Настраивает и анализирует рекламные кампании </li>
-                <li>Умеет работать с контентом</li>
-                <li>Формирует поставки на маркетплейсе</li>
-                <li>Анализирует продажи продукта</li>
-                <li>Разрабатывает стратегии продвижения и развития</li>
+                <li>Анализирует ниши и категории</li>
+                <li>Изучает целевую аудиторию и конкурентов</li>
+                <li>Выбирает поставщиков продукта</li>
+                <li>Занимается разработкой товара, заказывает образцы</li>
+                <li>Знает все о сертификации продукта</li>
+                <li>Выстраивает систему логистики</li>
+                <li>Управляет остатками товара</li>
               </ul>
               <a href="#" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a>
               <a href="#" class="profession__btn profession__btn_details">Ознакомиться с программой</a>
@@ -123,15 +128,15 @@
           <div class="profession project">
             <img src="./assets/img/proj__img.png" alt="" class="profession__img">
             <div class="profession__content">
-              <div class="profession__title">Ассистент + аккаунт-менеджер Wildberries </div>
+              <div class="profession__title">Project manager/<br>Управляющий<br>проектом</div>
               <ul class="profession__list">
-                <li>Занимается созданием карточек: описание, публикация фото и видео-контента</li>
-                <li>Анализирует и мониторит акции и цены на площадке</li>
-                <li>Настраивает и анализирует рекламные кампании </li>
-                <li>Умеет работать с контентом</li>
-                <li>Формирует поставки на маркетплейсе</li>
-                <li>Анализирует продажи продукта</li>
-                <li>Разрабатывает стратегии продвижения и развития</li>
+                <li>Работает с отчетами и аналитическими инструментами</li>
+                <li>Формирует цены на продукт</li>
+                <li>Выстраивает структуру и систему функционирования команды</li>
+                <li>Автоматизирует бизнес-процессы</li>
+                <li>Контролирует задачи и найм сотрудников</li>
+                <li>Составляет ТЗ дизайнеру</li>
+                <li>Работает над построение бренда на маркетплейсе</li>
               </ul>
               <a href="#" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a>
               <a href="#" class="profession__btn profession__btn_details">Ознакомиться с программой</a>

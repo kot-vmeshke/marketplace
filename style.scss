@@ -10,11 +10,6 @@
   font-display: swap;
 }
 
-@import './scss/variables';
-@import './scss/numbers';
-@import './scss/hero';
-@import './scss/professions';
-
 * {
   margin: 0;
   padding: 0;
@@ -29,3 +24,9 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
+
+@import './scss/variables';
+@import './scss/numbers';
+@import './scss/hero';
+@import './scss/professions';
+

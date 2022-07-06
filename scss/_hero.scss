@@ -3,6 +3,10 @@
   position: relative;
   background: url('../assets/img/main-bg.jpg') no-repeat center / cover;
 
+  &__container {
+    padding: 0;
+  }
+
   &__separator {
     position: absolute;
     width: 100%;
@@ -18,6 +22,10 @@
     margin: 0 auto;
     width: max-content;
     margin-bottom: 16px;
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
   }
 
   &__time {
@@ -27,13 +35,16 @@
     font-size: 16px;
     line-height: 143.7%;
     color: $color-reserch;
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &__time-span {
     font-family: $font-accent;
     font-style: normal;
     font-weight: 400;
-    font-size: 32.4196px;
+    font-size: 32px;
     line-height: 39px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -43,6 +54,12 @@
     background-clip: text;
     text-fill-color: transparent;
     text-shadow: 0px 0px 63.0342px rgba(27, 190, 227, 0.32);
+    @media (max-width: 1024px) {
+      font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   &__title {
@@ -60,6 +77,10 @@
     background-clip: text;
     text-fill-color: transparent;
     text-shadow: 0px 10.4225px 17.7183px rgba(0, 0, 0, 0.25);
+    @media (max-width: 1024px) {
+      font-size: 40px;
+      line-height: 38px;
+    }
   }
 
   &__title-span {
@@ -78,6 +99,10 @@
     background-clip: text;
     text-fill-color: transparent;
     text-shadow: 0px 10.4225px 17.7183px rgba(0, 0, 0, 0.25);
+    @media (max-width: 1024px) {
+      font-size: 50px;
+      line-height: 47px;
+    }
   }
   &__content-wrap {
     position: relative;
@@ -85,12 +110,25 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    @media (max-width: 1024px) {
+      margin-top: 0;
+    }
   }
   &__img {
     display: block;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    &_1024 {
+      display: none;
+      @media (max-width: 1024px) {
+        display: block;
+        margin-top: 90px;
+      }
+    }
   }
   &__offer {
     position: absolute;
@@ -106,6 +144,21 @@
     align-items: center;
     padding: 18px;
     gap: 36px;
+    @media (max-width: 1200px) {
+      z-index: 10;
+      bottom: -85px;
+    }
+    @media (max-width: 1024px) {
+      background: transparent;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      flex-direction: column;
+      top: 0px;
+      gap: 340px;
+      width: 100%;
+      bottom: auto;
+      left: 0;
+    }
   }
   &__offer-text {
     font-family: $font-main;
@@ -115,6 +168,16 @@
     line-height: 143.7%;
     text-align: right;
     color: $color-light;
+    @media (max-width: 1024px) {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 110%;
+      text-align: center;
+      color: $color-text;
+      max-width: 280px;
+    }
   }
   &__offer-btn {
     background: $gradient-project;
@@ -128,13 +191,18 @@
     align-items: center;
     justify-content: center;
     padding: 35px 45px;
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 300px;
+    }
   }
   &__btn-span {
     background-image: url('../assets/img/btn-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    mix-blend-mode: multiply;
+    mix-blend-mode: color-burn;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -148,6 +216,10 @@
     text-align: right;
     color: $color-light;
     text-transform: uppercase;
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
   &__instagrm {
     text-decoration: none;
@@ -166,17 +238,56 @@
     background: #F9F9F9;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    & img {
+      @media (max-width: 1024px) {
+        width: 15px;
+        height: auto;
+      }
+    }
+    @media (max-width: 1024px) {
+      font-size: 10px;
+    }
     &_pavel {
       bottom: 250px;
       right: 174px;
+      @media (max-width: 1200px) {
+        bottom: 290px;
+        right: 15%;
+      }
+      @media (max-width: 1024px) {
+        bottom: 200px;
+        right: calc(50% - 170px);
+      }
+      @media (max-width: 400px) {
+        right: calc(50% - 155px);
+      }
     }
     &_ler {
       bottom: 240px;
       left: 501px;
+      @media (max-width: 1200px) {
+        bottom: 275px;
+        left: calc(50% - 63px);
+      }
+      @media (max-width: 1024px) {
+        bottom: 180px;
+        left: calc(50% - 56px);
+      }
     }
     &_artem {
       bottom: 250px;
       left: 200px;
+      @media (max-width: 1200px) {
+        bottom: 290px;
+        left: 15%;
+      }
+      @media (max-width: 1024px) {
+        bottom: 200px;
+        left: calc(50% - 170px);
+      }
+      @media (max-width: 400px) {
+        left: calc(50% - 155px);
+      }
     }
   }
 }
@@ -185,6 +296,10 @@
 
 }
 .nav {
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 
   &__list {
     width: 100%;
@@ -240,6 +355,9 @@
       background: url('../assets/svg/logo.svg') no-repeat;
       width: 163px;
       height: 48px;
+      &_1024 {
+        display: none;
+      }
     }
 
   }
@@ -266,6 +384,20 @@
   &__span {
     font-weight: 300;
   }
+  @media (max-width: 1200px) {
+    width: 300px;
+    z-index: 9;
+    padding-right: 30px;
+    top: 390px;
+    left: calc(50% - 290px);
+  }
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    padding: 8px 17px 8px 8px;
+    width: 155px;
+    top: 300px;
+    left: calc(50% - 155px);
+  }
 }
 .employment {
   position: absolute;
@@ -288,5 +420,36 @@
   &__span {
     font-weight: 300;
   }
+  @media (max-width: 1200px) {
+    width: 300px;
+    z-index: 9;
+    padding: 12px;
+    top: 420px;
+    right: calc(50% - 290px);
+  }
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    padding: 8px;
+    width: 165px;
+    top: 312px;
+    right: calc(50% - 155px);
+  }
 }
+
+@media (max-width: 1024px) {
+  .header__logo_1024 {
+    padding: 0;
+    display: block;
+    background: url('../assets/svg/logo.svg') no-repeat;
+    width: 163px;
+    height: 48px;
+    margin: 0 auto;
+  }
+  .img-1024__wrap {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
