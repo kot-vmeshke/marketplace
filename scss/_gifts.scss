@@ -1,0 +1,98 @@
+.gifts {
+  padding: 83px 0 122px;
+  background: url('../assets/svg/gift__top.svg') no-repeat center top,
+              url('../assets/svg/gift__bottom.svg') no-repeat center bottom,
+              url('../assets/img/gift-bg.jpg') no-repeat center / cover;
+  @media (min-width: 1921px) {
+    background: url('../assets/svg/gift__top.svg') no-repeat center top / contain,
+                url('../assets/svg/gift__bottom.svg') no-repeat center bottom / contain,
+                url('../assets/img/gift-bg.jpg') no-repeat center / cover;
+  }
+
+  &__title {
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $color-text;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: 588px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 86px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 150px;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+    }
+  }
+}
+
+.gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+  &__img-wrap {
+    margin-bottom: 40px;
+    @media (max-width: 768px) {
+      max-width: 300px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__img {
+    display: block;
+    filter: drop-shadow(0px 14px 39px rgba(0, 0, 0, 0.16));
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 143.7%;
+    text-align: center;
+    color: $color-text;
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 143.7%;
+    text-align: center;
+    color: $color-text;
+    max-width: 370px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      max-width: 308px;
+    }
+    & span {
+      font-weight: 700;
+      color: #61C7BD;
+    }
+  }
+}

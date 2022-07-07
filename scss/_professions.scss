@@ -14,6 +14,11 @@
   @media (max-width: 768px) {
     padding: 35px 0 42px;
   }
+  @media (min-width: 1921px) {
+    background: url('../assets/svg/prof__bottom.svg') no-repeat center bottom / contain,
+                url('../assets/img/palm-right-prof.png') no-repeat bottom left,
+                url('../assets/img/palm-left-prof.png') no-repeat top right;
+  }
 
   &__title {
     font-family: $font-accent;
@@ -75,7 +80,7 @@
     box-shadow: 0px 7px 36px rgba(0, 0, 0, 0.11);
     border-radius: 19px;
     padding: 32px 23px;
-    min-height: 860px;
+    min-height: 890px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
