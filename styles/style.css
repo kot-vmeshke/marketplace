@@ -821,7 +821,7 @@ body {
   }
 }
 .profession__btn_details {
-  padding: 35px 15px;
+  padding: 33px 13px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -832,8 +832,7 @@ body {
   color: #969696;
   text-align: center;
   box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
-  outline: #20C6FF solid 2px;
-  outline-offset: -2px;
+  border: #20C6FF solid 2px;
   background-color: transparent;
 }
 @media (max-width: 768px) {
