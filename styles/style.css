@@ -169,7 +169,6 @@ body {
 .hero__date-wrap {
   display: flex;
   align-items: center;
-  gap: 35px;
   margin: 0 auto;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -189,6 +188,9 @@ body {
   font-size: 16px;
   line-height: 143.7%;
   color: #EA7543;
+}
+.hero__time:first-child {
+  margin-right: 35px;
 }
 @media (max-width: 1024px) {
   .hero__time {
@@ -1265,7 +1267,7 @@ body {
 
 .authors {
   background: #FBFBFB;
-  padding: 90px 0 0;
+  padding: 90px 0;
 }
 @media (max-width: 768px) {
   .authors {
@@ -1435,5 +1437,113 @@ body {
 @media (max-width: 1024px) {
   .author__list li {
     font-size: 16px;
+  }
+}
+
+.speakers {
+  background: #FBFBFB;
+  padding: 0 0 104px;
+}
+@media (max-width: 768px) {
+  .speakers {
+    padding: 0 0 70px;
+  }
+}
+.speakers__title {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #323232;
+  margin: 0 auto;
+  margin-bottom: 76px;
+  max-width: 588px;
+}
+@media (max-width: 768px) {
+  .speakers__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 35px;
+  }
+}
+.speakers__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .speakers__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.speaker {
+  max-width: 300px;
+  margin-bottom: 85px;
+}
+.speaker + .speaker:not(:nth-child(4)) {
+  margin-left: 126px;
+}
+@media (max-width: 1200px) {
+  .speaker + .speaker:not(:nth-child(4)) {
+    margin-left: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .speaker {
+    max-width: 400px;
+  }
+}
+.speaker__img-wrap {
+  max-width: 290px;
+  margin: 0 auto 35px;
+}
+.speaker__img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+}
+.speaker__title {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 118.5%;
+  text-align: left;
+  color: #323232;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .speaker__title {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+.speaker__list {
+  padding-left: 20px;
+}
+.speaker__list li {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 136%;
+  color: #323232;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1200px) {
+  .speakers__wrap .speaker:nth-child(even) {
+    margin-left: 126px;
+  }
+}
+@media (max-width: 1200px) and (max-width: 1024px) {
+  .speakers__wrap .speaker:nth-child(even) {
+    margin-left: 0;
   }
 }/*# sourceMappingURL=style.css.map */

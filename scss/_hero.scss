@@ -18,7 +18,6 @@
   &__date-wrap {
     display: flex;
     align-items: center;
-    gap: 35px;
     margin: 0 auto;
     width: max-content;
     margin-bottom: 16px;
@@ -35,6 +34,9 @@
     font-size: 16px;
     line-height: 143.7%;
     color: $color-reserch;
+    &:first-child {
+      margin-right: 35px;
+    }
     @media (max-width: 1024px) {
       font-size: 14px;
     }
