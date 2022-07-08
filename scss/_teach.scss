@@ -75,7 +75,6 @@
 
   &__top {
     display: flex;
-    gap: 19px;
     align-items: center;
   }
 
@@ -95,6 +94,8 @@
   }
 
   &__img {
+    display: block;
+    margin: 0 19px;
     @media (max-width: 768px) {
       width: 44px;
       height: auto;
