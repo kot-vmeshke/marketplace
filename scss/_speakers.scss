@@ -1,10 +1,6 @@
 .speakers {
 
   background: $color-bg-light;
-  padding: 0 0 104px;
-  @media (max-width: 768px) {
-    padding: 0 0 70px;
-  }
 
   &__title {
     font-family: $font-accent;
@@ -41,6 +37,9 @@
 
   max-width: 300px;
   margin-bottom: 85px;
+  @media (max-width: 1024px) {
+    margin-bottom: 50px;
+  }
 
   & + .speaker:not(:nth-child(4)) {
     margin-left: 126px;
