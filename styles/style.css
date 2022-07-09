@@ -679,6 +679,7 @@ body {
 @media (min-width: 1921px) {
   .prof {
     background: url("../assets/svg/prof__bottom.svg") no-repeat center bottom/contain, url("../assets/img/palm-right-prof.png") no-repeat bottom left, url("../assets/img/palm-left-prof.png") no-repeat top right;
+    background-color: #FBFBFB;
   }
 }
 .prof__title {
@@ -1764,4 +1765,347 @@ body {
     font-size: 16px;
     line-height: 21px;
   }
+}
+
+.price {
+  position: relative;
+  padding-top: 90px;
+  background: url("../assets/img/price-bg.jpg") no-repeat center top/cover;
+}
+.price__title {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #FBFBFB;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .price__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+.price__wrap {
+  display: flex;
+  margin-bottom: 120px;
+  margin-top: 125px;
+}
+@media (max-width: 1200px) {
+  .price__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .price__wrap {
+    margin-bottom: 65px;
+    margin-top: 90px;
+  }
+}
+.price__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 143.7%;
+  text-align: center;
+  color: #FBFBFB;
+}
+.price__subtitle span {
+  display: block;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .price__subtitle {
+    font-size: 17px;
+  }
+}
+.price__img-wrap {
+  margin-top: -223px;
+  margin-left: -20px;
+}
+@media (max-width: 1024px) {
+  .price__img-wrap {
+    margin-top: -130px;
+  }
+}
+@media (max-width: 586px) {
+  .price__img-wrap {
+    margin-top: -50px;
+  }
+}
+.price__img {
+  width: 100%;
+  height: auto;
+}
+.price__separator {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: -2px;
+  z-index: 5;
+}
+
+.rate {
+  position: relative;
+  width: 100%;
+  max-width: 354px;
+  min-height: 1130px;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 14px;
+}
+.rate:nth-child(2) {
+  margin: 0 48px;
+}
+.rate::before {
+  position: absolute;
+  content: "";
+  width: 94%;
+  height: 25px;
+  background: white;
+  top: -11px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  z-index: 0;
+}
+.rate_research::after {
+  position: absolute;
+  content: "";
+  top: -28px;
+  right: -11px;
+  width: 115px;
+  height: 65px;
+  background: url(../assets/img/research__before.png) no-repeat center/contain;
+}
+.rate_project::after {
+  position: absolute;
+  content: "";
+  top: -28px;
+  right: -11px;
+  width: 115px;
+  height: 65px;
+  background: url(../assets/img/project__before.png) no-repeat center/contain;
+}
+@media (max-width: 1200px) {
+  .rate {
+    min-height: auto;
+  }
+  .rate:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}
+.rate__icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+}
+.rate__icon_assistant {
+  background: url("../assets/svg/assistant__icon.svg") no-repeat center, linear-gradient(45deg, #EA719F 0%, #D187A3 100%);
+}
+.rate__icon_research {
+  background: url("../assets/svg/research__icon.svg") no-repeat center, linear-gradient(45deg, #EA7543 0%, #FFA362 100%);
+}
+.rate__icon_project {
+  background: url("../assets/svg/project__icon.svg") no-repeat center, linear-gradient(45deg, #7C6DE0 0%, #666BF7 100%);
+}
+.rate__title {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #323232;
+  margin: 12px 0 17px;
+}
+@media (max-width: 768px) {
+  .rate__title {
+    font-size: 22px;
+  }
+}
+.rate__salary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 132.2%;
+  text-align: center;
+  color: #FBFBFB;
+  padding: 7px 13px;
+  margin: 0 auto 25px;
+  border-radius: 4px;
+}
+.rate__salary span {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 700;
+}
+.rate__salary_assistant {
+  background: linear-gradient(45deg, #EA719F 0%, #D187A3 100%);
+}
+.rate__salary_research {
+  background: linear-gradient(45deg, #EA7543 0%, #FFA362 100%);
+}
+.rate__salary_project {
+  background: linear-gradient(45deg, #7C6DE0 0%, #666BF7 100%);
+}
+.rate__list {
+  padding-left: 20px;
+}
+.rate__list li {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 132.2%;
+  color: #323232;
+  margin-bottom: 14px;
+}
+@media (max-width: 768px) {
+  .rate__list li {
+    font-size: 16px;
+  }
+}
+.rate__list_assistant li::marker {
+  color: #EA719F;
+}
+.rate__list_research li::marker {
+  color: #EA7543;
+}
+.rate__list_project li::marker {
+  color: #564AA4;
+}
+.rate__sublist {
+  padding-left: 28px;
+  margin-top: 10px;
+}
+.rate__sublist li.rate__sublist-item {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 132.2%;
+  color: #323232;
+}
+.rate__price {
+  font-family: "Qisharon", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 66px;
+  text-align: center;
+  color: #323232;
+  margin-top: auto;
+}
+@media (max-width: 1200px) {
+  .rate__price {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .rate__price {
+    font-size: 44px;
+  }
+}
+.rate__price-description {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 132.2%;
+  text-align: center;
+  letter-spacing: 0.14em;
+  color: #9C9C9C;
+  margin-bottom: 28px;
+}
+@media (max-width: 768px) {
+  .rate__price-description {
+    font-size: 14px;
+  }
+}
+.rate__offer-btn {
+  box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(255, 255, 255, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+  width: 100%;
+  max-width: 320px;
+}
+@media (max-width: 1024px) {
+  .rate__offer-btn {
+    max-width: 300px;
+  }
+}
+.rate__offer-btn_part {
+  background: linear-gradient(180deg, #999999 0%, #747474 100%);
+  margin-top: 20px;
+}
+.rate__offer-btn_assistant {
+  background: linear-gradient(45deg, #EA719F 0%, #D187A3 100%);
+}
+.rate__offer-btn_research {
+  background: linear-gradient(45deg, #EA7543 0%, #FFA362 100%);
+}
+.rate__offer-btn_project {
+  background: linear-gradient(45deg, #7C6DE0 0%, #666BF7 100%);
+}
+.rate__btn-span {
+  background-image: url("../assets/img/btn-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: color-burn;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.rate__btn-text {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  text-align: right;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media (max-width: 1024px) {
+  .rate__btn-text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+.rate__descr {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 132.2%;
+  text-align: center;
+  color: #323232;
+  opacity: 0.4;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */

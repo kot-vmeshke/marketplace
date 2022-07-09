@@ -18,6 +18,7 @@
     background: url('../assets/svg/prof__bottom.svg') no-repeat center bottom / contain,
                 url('../assets/img/palm-right-prof.png') no-repeat bottom left,
                 url('../assets/img/palm-left-prof.png') no-repeat top right;
+    background-color: $color-bg-light;
   }
 
   &__title {
