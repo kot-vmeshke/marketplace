@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   scroll-behavior: smooth;
 }
 
@@ -653,7 +653,6 @@ body {
     height: 48px;
     margin: 0 auto;
   }
-
   .img-1024__wrap {
     overflow: hidden;
     display: flex;

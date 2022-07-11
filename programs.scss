@@ -15,7 +15,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
+body {
   scroll-behavior: smooth;
 }
 .container {
@@ -26,13 +26,6 @@ html {
 }
 
 @import './scss/variables';
-@import './scss/numbers';
-@import './scss/hero';
-@import './scss/professions';
-@import './scss/teach';
-@import './scss/gifts';
-@import './scss/authors';
-@import './scss/speakers';
-@import './scss/questions';
-@import './scss/price';
-
+@import './scss/header-prog';
+@import './scss/price-prog';
+@import './scss/main-prog';
