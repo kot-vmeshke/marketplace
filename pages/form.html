@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academica - registration</title>
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="reg">
+  <h1 class="reg__title">Ассистент + аккаунт-менеджер Wildberries</h1>
+  <div class="reg__subtitle">ЗП на рынке: <span>от 90 000 руб</span></div>
+  <form action="#" class="reg__form" method="post">
+    <div class="tab active">
+      <h2 class="reg__step">Шаг 1. Заполните данные о себе</h2>
+      <div class="reg__wrap">
+        <label for="user-name">
+          Ваше Имя:
+          <input type="text" name="user-name" id="user-name" placeholder="Иван" required>
+        </label>
+        <label for="user-phone">
+          Ваш телефон:
+          <input type="text" name="user-phone" id="user-phone" placeholder="+7 (995) 777-22-21" required>
+        </label>
+        <label for="user-mail">
+          Ваша почта
+          <input type="email" name="user-mail" id="user-mail" placeholder="example@mail.ru" required>
+        </label>
+        <a href="#" class="reg__link">Я даю согласие на обработку <span>персональных данных</span></a>
+        <button type="button" class="reg__btn"><span class="reg__btn-span"></span><span class="reg__btn-text">Отправить</span></button>
+      </div>
+    </div>
+    <div class="tab">
+      <h2 class="reg__step">Шаг 2. Выберите способ оплаты</h2>
+      <div class="reg__wrap">
+        <span class="reg__order">Заказ №000001</span>
+        <div class="reg__logo"></div>
+        <div class="reg__user-data">
+          <span class="reg__user-name">Виктор Пелевин</span>
+          <span class="reg__user-mail">pelevin@yandex.ru</span>
+          <span class="reg__user-phone">+79119111911</span>
+        </div>
+        <div class="reg__promo">
+          <input type="text" class="promo" placeholder="есть промокод?">
+          <button class="promo-btn" type="button"></button>
+        </div>
+        <div class="reg__set1">
+          <label for="card" class="card"><input type="radio" name="set1" id="card" checked></label>
+          <label for="part" class="part"><input type="radio" name="set1" id="part"></label>
+          <label for="prepay" class="prepay"><input type="radio" name="set1" id="prepay"></label>
+        </div>
+        <div class="reg__set2">
+          <input type="radio" name="set2" id="robokassa" checked>
+          <label for="robokassa"></label>
+          <input type="radio" name="set2" id="prodamus">
+          <label for="prodamus"></label>
+        </div>
+        <span class="reg__price">48 000₽</span>
+        <button type="button" class="reg__btn"><span class="reg__btn-span"></span><span class="reg__btn-text">Перейти к оплате</span></button>
+      </div>
+    </div>
+  </form>
+  <script src="../scripts/form.js"></script>
+</body>
+</html>

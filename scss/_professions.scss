@@ -165,6 +165,10 @@
       text-transform: uppercase;
       color: $color-light;
       text-align: center;
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
+      }
       @media(max-width: 768px) {
         font-size: 13px;
         line-height: 18px;
