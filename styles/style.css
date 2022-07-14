@@ -2555,10 +2555,6 @@ html {
   margin-top: 137px;
 }
 
-.tab {
+.tab-2 {
   display: none;
-}
-
-.tab.active {
-  display: block;
 }/*# sourceMappingURL=style.css.map */

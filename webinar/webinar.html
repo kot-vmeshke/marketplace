@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academica - webinar</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./webinar.css">
+</head>
+<body>
+  <main class="main">
+    <section class="hero">
+      <div class="container hero__container">
+        <header class="header">
+          <ul class="header__list">
+            <li class="header__item">Дата проведения: <span class="header__color header__color_assistant">20 июля</span></li>
+            <li class="header__item header__logo"></li>
+            <li class="header__item header__item_left">Время проведения:<span class="header__color header__color_assistant">19:00 по МСК</span></li>
+          </ul>
+        </header>
+        <p class="hero__subtitle"><b>Вебинар</b> Леры и Артёма Чекалиных + Паши Шевченко на тему:
+        </p>
+        <h1 class="hero__title"><span>3 самые <span>ВЕБИНАР</span>востребованные</span>профессии на Wildberries</h1>
+        <div class="hero__content-wrap">
+          <img src="./assets/img/heroes.png" alt="" width="1000" class="hero__img" />
+          <div class="img-1024__wrap">
+            <img src="./assets/img/heroes_501.png" alt="" width="500" class="hero__img_1024" />
+          </div>
+          <a href="https://www.instagram.com/artem_chek/" class="hero__instagrm hero__instagrm_artem" target="blank"><img src="./assets/svg/instagram.svg" alt="" width="30"> artem_chek</a>
+          <a href="https://www.instagram.com/ler_chek/" class="hero__instagrm hero__instagrm_ler"target="blank"> <img src="./assets/svg/instagram.svg" alt="" width="30">ler_chek</a>
+          <a href="https://www.instagram.com/pavel_shauchenka/" class="hero__instagrm hero__instagrm_pavel" target="blank"><img src="./assets/svg/instagram.svg" alt="" width="30">pavel_shauchenka</a>
+          <form class="hero__offer" action="#" method="post">
+            <label for="user-name">
+              Ваше Имя:
+              <input type="text" name="user-name" id="user-name" placeholder="Иван" required>
+            </label>
+            <label for="user-phone">
+              Ваш телефон:
+              <input type="text" name="user-phone" id="user-phone" placeholder="+7 (995) 777-22-21" required>
+            </label>
+            <label for="user-mail">
+              Ваша почта
+              <input type="email" name="user-mail" id="user-mail" placeholder="example@mail.ru" required>
+            </label>
+            <p class="hero__offer-date">Дата проведения: 
+              <span>20 июля</span>
+              </p>
+            <button type="submit" class="hero__offer-btn"><span class="hero__btn-span"></span><span class="hero__btn-text">Участвовать</span></button>
+            <p class="hero__offer-date left">Время проведения: 
+              <span class="left">19:00 по МСК</span>
+              </p>
+          </form>
+        </div>
+      </div>
+      <img src="./assets/svg/main-bottom.svg" alt="" class="hero__separator">
+    </section>
+  </main>
+  <div class="overlay">
+    <div class="popup">
+      <img src="./assets/svg/check.svg" alt="" class="popup__img" width="78px">
+      <h2 class="popup__title">Спасибо за регистрацию!</h2>
+      <p class="popup__subtitle">В течение 15 минут тебе на почту придёт подтверждение. </p>
+      <div class="popup__items-wrap">
+        <div class="popup__item">
+          <div class="popup__item-img-wrap"><img src="./assets/svg/envelop.svg" alt="" class="popup__item-img" width="60"></div>
+          <p class="popup__item-text">P.S Письмо может попасть в папку «Спам», не забудь глянуть там. </p>
+        </div>
+        <div class="popup__item">
+          <div class="popup__item-img-wrap"><img src="./assets/svg/telegram.svg" alt="" class="popup__item-img" width="50"></div>
+          <p class="popup__item-text">А чтобы не пропускать все новости переходи в наш Telegram-канал </p>
+        </div>
+      </div>
+      <a href="#" class="hero__offer-btn telegram"><span class="hero__btn-span"></span><span class="hero__btn-text">Telegram-канал</span></a>
+    </div>
+  </div>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="./mask.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
