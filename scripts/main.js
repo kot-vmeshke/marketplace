@@ -1,8 +1,5 @@
 window.addEventListener('load', () => {
 
-  // const btnResearch = document.querySelector('.price__btn_research');
-  // const btnAssistant = document.querySelector('.price__btn_assistant');
-  // const btnProject = document.querySelector('.price__btn_project');
   const buttons = [document.querySelector('.price__btn_research'), document.querySelector('.price__btn_assistant'), document.querySelector('.price__btn_project')];
 
   if (localStorage.getItem('guid')) {
@@ -15,6 +12,7 @@ window.addEventListener('load', () => {
       const [btn] = buttons.filter(item => item !== null);
       if(btn) {
         btn.addEventListener('click', () => {
+          console.log('click');
           fetch(`https://tdmnewreal.fvds.ru/academica/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
             method: 'POST',
           }).then((response) => {

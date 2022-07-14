@@ -15,6 +15,14 @@ const inputName = document.querySelector('#user-name');
 const inputPhone = document.querySelector('#user-phone');
 const inputMail = document.querySelector('#user-mail');
 
+const searchString = new URLSearchParams(window.location.search);
+console.log('searchString: ', searchString);
+const utmSource = searchString.get('utm_source') || '';
+const utmMedium = searchString.get('utm_medium') || '';
+const utmContent = searchString.get('utm_content') || '';
+const utmCampaign = searchString.get('utm_campaign') || '';
+const utmGroup = searchString.get('utm_group') || '';
+
 prodamus.addEventListener('change', () => {
   set2.style.left = 'auto';
   set2.style.right = '25px';
@@ -27,15 +35,47 @@ btnNext.addEventListener('click', () => {
   if (inputName.value && inputPhone.value && inputMail.value) {
     tab1.style.display = 'none';
     tab2.style.display = 'block';
+    console.log({
+      user_guid: localStorage.getItem('guid'),
+      name: inputName.value,
+      email: inputMail.value,
+      phone: inputPhone.value,
+      order_id: localStorage.getItem('order'),
+      back_link: `https://front.end/index.html?order_id=${localStorage.getItem('order')}`,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_content: utmContent,
+      utm_campaign: utmCampaign,
+      utm_group: utmGroup,
+    })
+    fetch(`https://tdmnewreal.fvds.ru/academica/update_userdata`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_guid: localStorage.getItem('guid'),
+        name: inputName.value,
+        email: inputMail.value,
+        phone: inputPhone.value,
+        order_id: localStorage.getItem('order'),
+        back_link: `https://front.end/index.html?order_id=${localStorage.getItem('order')}`,
+        utm_source: utmSource,
+        utm_medium: utmMedium,
+        utm_content: utmContent,
+        utm_campaign: utmCampaign,
+        utm_group: utmGroup
+      })
+    }).then((response) => {
+      return response.json();
+    }).then(data => console.log(data))
+
     order.innerText = `Заказ №${localStorage.getItem('order')}`;
     userName.innerText = inputName.value;
-    console.log('inputName.value: ', inputName.value);
     userPhone.innerText = inputPhone.value;
-    console.log('inputPhone.value: ', inputPhone.value);
     userMail.innerText = inputMail.value;
-    console.log('inputMail.value: ', inputMail.value);
   } else {
     alert('Заполните все поля');
   }
-
 })
