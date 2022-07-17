@@ -5,6 +5,11 @@ const robokassa = set2.querySelector('#robokassa');
 const btnNext = document.querySelector('.reg__btn');
 const tab1 = document.querySelector('.tab-1');
 const tab2 = document.querySelector('.tab-2');
+const title = document.querySelector('.reg__title');
+const salary = document.querySelector('.reg__subtitle span');
+
+title.innerText = localStorage.getItem('title');
+salary.innerText = `от ${localStorage.getItem('salary')} руб`;
 
 const order = document.querySelector('.reg__order');
 const userName = document.querySelector('.reg__user-name');
@@ -48,6 +53,7 @@ btnNext.addEventListener('click', () => {
       utm_campaign: utmCampaign,
       utm_group: utmGroup,
     })
+/*
     fetch(`https://tdmnewreal.fvds.ru/academica/update_userdata`, {
       method: 'POST',
       headers: {
@@ -70,7 +76,24 @@ btnNext.addEventListener('click', () => {
     }).then((response) => {
       return response.json();
     }).then(data => console.log(data))
-
+*/
+    fetch('https://tdmnewreal.fvds.ru/academica/update_userdata?' + new URLSearchParams({
+      user_guid: localStorage.getItem('guid'),
+      name: inputName.value,
+      email: inputMail.value,
+      phone: inputPhone.value,
+      order_id: localStorage.getItem('order'),
+      back_link: `https://front.end/index.html?order_id=${localStorage.getItem('order')}`,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_content: utmContent,
+      utm_campaign: utmCampaign,
+      utm_group: utmGroup
+    }), {
+      method: 'post',
+    }).then((response) => {
+      return response.json();
+    }).then(data => console.log(data))
     order.innerText = `Заказ №${localStorage.getItem('order')}`;
     userName.innerText = inputName.value;
     userPhone.innerText = inputPhone.value;

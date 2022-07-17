@@ -48,7 +48,7 @@ html {
   text-align: center;
   letter-spacing: 0.07em;
   color: #323232;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 @media (max-width: 1024px) {
   .hero__subtitle {
@@ -84,7 +84,7 @@ html {
   z-index: 10;
   content: "ВЕБИНАР";
   top: -28px;
-  right: 80px;
+  right: 180px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -104,11 +104,13 @@ html {
   }
 }
 .hero__title > span {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  max-width: 715px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 900;
-  font-size: 64.1486px;
+  font-size: 64px;
   line-height: 65px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -128,6 +130,7 @@ html {
     line-height: 31px;
     padding: 7px 10px;
     text-align: left;
+    max-width: 280px;
   }
 }
 .hero__title > span span {
