@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
           fetch(`https://marketplace-academica.ru/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
             method: 'POST',
           }).then((response) => {
-            return response.json();
+            return response.text();
           }).then(data => {
             localStorage.setItem('order', data.data.order_id);
             window.location.href = './form.html';
@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     fetch('https://marketplace-academica.ru/get_ul', {
       method: 'POST',      
     }).then((response) => {
-      return response.json();
+      return response.text();
     }).then(data => {
       localStorage.setItem('guid', data.data.user_guid);
       // TODO: data to footer
