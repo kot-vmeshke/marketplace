@@ -302,6 +302,7 @@
         bottom: -17px;
         left: 50%;
         transform: translate(-58%, 0);
+        width: 100%;
       }
       &.card {
         background: #8E8DFF url('../assets/svg/card.svg') no-repeat center;
@@ -325,6 +326,14 @@
         color: $color-text;
         opacity: 0.5;
       }
+      &.ip-ooo {
+        background: #CDCDFB url('../assets/svg/lock.svg') no-repeat center;
+      }
+      &.ip-ooo::after {
+        content: 'ИП/ООО';
+        color: $color-text;
+        opacity: 0.5;
+      }
     }
   }
 
@@ -333,8 +342,11 @@
     width: 450px;
     position: absolute;
     left: 25px;
-    top: 410px;
+    top: 442px;
     transition: 0.6s;
+    @media (max-width: 1024px) {
+      top: 410px;
+    }
     & input {
       display: none;
       &:checked + label {

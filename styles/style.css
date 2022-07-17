@@ -2481,6 +2481,7 @@ html {
   bottom: -17px;
   left: 50%;
   transform: translate(-58%, 0);
+  width: 100%;
 }
 .reg__set1 label.card {
   background: #8E8DFF url("../assets/svg/card.svg") no-repeat center;
@@ -2504,13 +2505,26 @@ html {
   color: #323232;
   opacity: 0.5;
 }
+.reg__set1 label.ip-ooo {
+  background: #CDCDFB url("../assets/svg/lock.svg") no-repeat center;
+}
+.reg__set1 label.ip-ooo::after {
+  content: "ИП/ООО";
+  color: #323232;
+  opacity: 0.5;
+}
 .reg__set2 {
   display: flex;
   width: 450px;
   position: absolute;
   left: 25px;
-  top: 410px;
+  top: 442px;
   transition: 0.6s;
+}
+@media (max-width: 1024px) {
+  .reg__set2 {
+    top: 410px;
+  }
 }
 .reg__set2 input {
   display: none;
