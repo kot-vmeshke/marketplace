@@ -4,8 +4,8 @@ window.addEventListener('load', () => {
 
   if (localStorage.getItem('guid')) {
     let guid = localStorage.getItem('guid');
-    fetch(`https://tdmnewreal.fvds.ru/academica/get_ul?user_guid=${guid}`, {
-      method: 'POST'
+    fetch(`https://marketplace-academica.ru/academica/get_ul?user_guid=${guid}`, {
+      method: 'POST',
     }).then((response) => {
       if (response.ok) {
         return response.json();
@@ -18,8 +18,8 @@ window.addEventListener('load', () => {
         btn.addEventListener('click', () => {
           localStorage.setItem('title', btn.dataset.title);
           localStorage.setItem('salary', btn.dataset.salary);
-          fetch(`https://tdmnewreal.fvds.ru/academica/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
-            method: 'POST'
+          fetch(`https://marketplace-academica.ru/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
+            method: 'POST',
           }).then((response) => {
             return response.json();
           }).then(data => {
@@ -30,9 +30,8 @@ window.addEventListener('load', () => {
       }
     });   
   } else {
-    fetch('https://tdmnewreal.fvds.ru/academica/get_ul', {
+    fetch('https://marketplace-academica.ru/get_ul', {
       method: 'POST',      
-      mode: 'no-cors',
     }).then((response) => {
       return response.json();
     }).then(data => {

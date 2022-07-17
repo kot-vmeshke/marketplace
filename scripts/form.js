@@ -77,7 +77,7 @@ btnNext.addEventListener('click', () => {
       return response.json();
     }).then(data => console.log(data))
 */
-    fetch('https://tdmnewreal.fvds.ru/academica/update_userdata?' + new URLSearchParams({
+    fetch('https://marketplace-academica.ru/update_userdata?' + new URLSearchParams({
       user_guid: localStorage.getItem('guid'),
       name: inputName.value,
       email: inputMail.value,
