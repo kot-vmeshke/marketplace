@@ -42,6 +42,3 @@ window.addEventListener('load', () => {
   }
 })
 
-document.querySelector('.form__btn').addEventListener('click', () => {
-  console.log(document.querySelector('#user-phone').value);
-})
