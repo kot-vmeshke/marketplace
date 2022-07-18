@@ -10,7 +10,6 @@ const salary = document.querySelector('.reg__subtitle span');
 
 title.innerText = localStorage.getItem('title');
 salary.innerText = `от ${localStorage.getItem('salary')} руб`;
-//centerFooter.innerText = `${localStorage.getItem('org_name')}${localStorage.getItem('org_data')}`;
 
 const order = document.querySelector('.reg__order');
 const userName = document.querySelector('.reg__user-name');
@@ -23,33 +22,43 @@ const inputMail = document.querySelector('#user-mail');
 const inputIp = document.querySelector('#user-ip');
 const inputInn = document.querySelector('#user-inn');
 const inputKpp = document.querySelector('#user-kpp');
-
+const inputFullname = document.querySelector('#user-fullname');
+const inputSurname = document.querySelector('#user-surname');
+const inputFathername = document.querySelector('#user-fathername');
+const regBtn = document.querySelector('.btn-pay');
 const regIp = document.querySelector('.reg__ip');
+const ip = document.querySelector('#ip-ooo');
 const regPart = document.querySelector('.reg__partpay');
+const part = document.querySelector('#part');
 const price = document.querySelector('.reg__price');
+price.innerText = `${localStorage.getItem('price')}₽`;
 
 const set1 = document.querySelector('.reg__set1');
 set1.addEventListener('click', (event) => {
-  if(event.target.classList.contains('js-radio-set1') && event.target.classList.contains('ip-ooo')) {
+  if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('ip-ooo')) {
     set2.style.display = 'none';
     regIp.style.display = 'block';
     price.style.marginTop = '0';
     regPart.style.display = '';
+    price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('part')) {
     set2.style.display = 'none';
     regPart.style.display = 'block';
     price.style.marginTop = '0';
     regIp.style.display = '';
+    price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
     set2.style.display = '';
     price.style.marginTop = '';
     regIp.style.display = '';
     regPart.style.display = '';
+    price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('prepay')) {
     set2.style.display = '';
     price.style.marginTop = '';
     regIp.style.display = '';
     regPart.style.display = '';
+    price.innerText = '2 000₽'
   }
 })
 
@@ -64,10 +73,43 @@ const utmGroup = searchString.get('utm_group') || '';
 prodamus.addEventListener('change', () => {
   set2.style.left = 'auto';
   set2.style.right = '25px';
+  console.log(localStorage.getItem('order'));
+  console.log(userMail.innerText);
+  console.log(localStorage.getItem('guid'));
+  fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=prodamus`, {
+    method: 'POST',
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      console.error('error');
+    }
+  }).then(data => {
+    console.log(data);
+    regBtn.addEventListener('click', () => {
+      window.location.href = data.data.payment_link;
+      console.log('data.data.payment_link: ', data.data.payment_link);
+    })
+  })
 })
 robokassa.addEventListener('change', () => {
   set2.style.left = '';
   set2.style.right = '';
+  fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=robokassa`, {
+    method: 'POST',
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      console.error('error');
+    }
+  }).then(data => {
+    console.log(data);
+    regBtn.addEventListener('click', () => {
+      window.location.href = data.data.payment_link;
+      console.log('data.data.payment_link: ', data.data.payment_link);
+    })
+  })
 })
 btnNext.addEventListener('click', () => {
   if (inputName.value && inputPhone.value && inputMail.value) {
@@ -109,5 +151,43 @@ btnNext.addEventListener('click', () => {
     userMail.innerText = inputMail.value;
   } else {
     alert('Заполните все поля');
+  }
+})
+
+regBtn.addEventListener('click', () => {
+  if (ip.checked) {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value}`, {
+      method: 'POST',
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error('error');
+      }
+    }).then(data => {
+      console.log(data);
+      console.log('inputIp.value: ', inputIp.value);
+      console.log('inputInn.value: ', inputInn.value);
+      console.log('inputKpp.value: ', inputKpp.value);
+      //window.location.href = data.data.payment_link;
+    })
+  }
+  if (part.checked) {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}`, {
+      method: 'POST',
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error('error');
+      }
+    }).then(data => {
+      console.log(data);
+      console.log(inputFullname.value);
+      console.log(inputFathername.value);
+      console.log(inputSurname.value);
+      console.log(userPhone.innerText.substring(1));
+      //window.location.href = data.data.payment_link;
+    })
   }
 })

@@ -2,7 +2,7 @@
   width: 100%;
   background: #F9F8FF;
 
-  & .container {
+  &__container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -237,7 +237,7 @@
 
   &__user-mail,
   &__user-phone {
-    font-family: 'Gotham Pro';
+    font-family: $font-main;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -454,7 +454,7 @@
   
 
 }
-.tab-2 {
+.tab-1 {
   display: none;
 }
 

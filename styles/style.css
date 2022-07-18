@@ -2142,7 +2142,7 @@ html {
   width: 100%;
   background: #F9F8FF;
 }
-.reg .container {
+.reg__container {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -2399,7 +2399,7 @@ html {
   display: block;
 }
 .reg__user-mail, .reg__user-phone {
-  font-family: "Gotham Pro";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -2641,7 +2641,7 @@ html {
   margin-top: 137px;
 }
 
-.tab-2 {
+.tab-1 {
   display: none;
 }
 

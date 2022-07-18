@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
         btn.addEventListener('click', () => {
           localStorage.setItem('title', btn.dataset.title);
           localStorage.setItem('salary', btn.dataset.salary);
+          localStorage.setItem('price', btn.dataset.price);
           fetch(`https://marketplace-academica.ru/academica/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
             method: 'POST',
           }).then((response) => {
@@ -63,6 +64,7 @@ window.addEventListener('load', () => {
         btn.addEventListener('click', () => {
           localStorage.setItem('title', btn.dataset.title);
           localStorage.setItem('salary', btn.dataset.salary);
+          localStorage.setItem('price', btn.dataset.price);
           fetch(`https://marketplace-academica.ru/choose_plan?user_guid=${guid}&plan_id=${btn.dataset.id}&cost=${btn.dataset.price}`, {
             method: 'POST',
           }).then((response) => {
