@@ -19,6 +19,38 @@ const userMail = document.querySelector('.reg__user-mail');
 const inputName = document.querySelector('#user-name');
 const inputPhone = document.querySelector('#user-phone');
 const inputMail = document.querySelector('#user-mail');
+const inputIp = document.querySelector('#user-ip');
+const inputInn = document.querySelector('#user-inn');
+const inputKpp = document.querySelector('#user-kpp');
+
+const regIp = document.querySelector('.reg__ip');
+const regPart = document.querySelector('.reg__partpay');
+const price = document.querySelector('.reg__price');
+
+const set1 = document.querySelector('.reg__set1');
+set1.addEventListener('click', (event) => {
+  if(event.target.classList.contains('js-radio-set1') && event.target.classList.contains('ip-ooo')) {
+    set2.style.display = 'none';
+    regIp.style.display = 'block';
+    price.style.marginTop = '0';
+    regPart.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('part')) {
+    set2.style.display = 'none';
+    regPart.style.display = 'block';
+    price.style.marginTop = '0';
+    regIp.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
+    set2.style.display = '';
+    price.style.marginTop = '';
+    regIp.style.display = '';
+    regPart.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('prepay')) {
+    set2.style.display = '';
+    price.style.marginTop = '';
+    regIp.style.display = '';
+    regPart.style.display = '';
+  }
+})
 
 const searchString = new URLSearchParams(window.location.search);
 console.log('searchString: ', searchString);

@@ -2141,6 +2141,8 @@ html {
 .reg {
   width: 100%;
   background: #F9F8FF;
+}
+.reg .container {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -2157,8 +2159,15 @@ html {
   letter-spacing: 0.02em;
   color: #323232;
 }
+@media (max-width: 1024px) {
+  .reg__title {
+    font-size: 40px;
+    line-height: 50px;
+    margin-top: 60px;
+  }
+}
 .reg__subtitle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
@@ -2311,6 +2320,11 @@ html {
   transition: 0.3s;
   cursor: pointer;
 }
+@media (max-width: 1024px) {
+  .reg__btn {
+    padding: 35px;
+  }
+}
 .reg__btn:hover {
   box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
 }
@@ -2330,7 +2344,7 @@ html {
   font-weight: 700;
   font-size: 24px;
   line-height: 143.7%;
-  text-align: right;
+  text-align: center;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -2411,6 +2425,7 @@ html {
   font-size: 12px;
   line-height: 14px;
   color: #EA7543;
+  height: 42px;
 }
 .reg__promo .promo::-moz-placeholder {
   font-family: "Roboto", sans-serif;
@@ -2463,12 +2478,32 @@ html {
 .reg__set1 input {
   display: none;
 }
+.reg__set1 input:checked + label {
+  background-color: #8E8DFF;
+}
+.reg__set1 input:checked + label::after {
+  color: #5756E8;
+  opacity: 1;
+}
 .reg__set1 label {
   width: 72px;
   height: 72px;
   border-radius: 13px;
   position: relative;
   cursor: pointer;
+  background-color: #CDCDFB;
+}
+@media (max-width: 768px) {
+  .reg__set1 label {
+    width: 50px;
+    height: 50px;
+  }
+}
+.reg__set1 label:hover {
+  background-color: #B0AFFF;
+}
+.reg__set1 label:hover::after {
+  opacity: 1;
 }
 .reg__set1 label::after {
   position: absolute;
@@ -2482,48 +2517,61 @@ html {
   left: 50%;
   transform: translate(-58%, 0);
   width: 100%;
+  color: #323232;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .reg__set1 label::after {
+    font-size: 9px;
+    line-height: 12px;
+  }
 }
 .reg__set1 label.card {
-  background: #8E8DFF url("../assets/svg/card.svg") no-repeat center;
+  background-image: url("../assets/svg/card.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .reg__set1 label.card::after {
   content: "Карта";
-  color: #5756E8;
 }
 .reg__set1 label.part {
-  background: #B0AFFF url("../assets/svg/part.svg") no-repeat center;
+  background-image: url("../assets/svg/part.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .reg__set1 label.part::after {
   content: "Рассрочка";
-  color: #323232;
 }
 .reg__set1 label.prepay {
-  background: #CDCDFB url("../assets/svg/lock.svg") no-repeat center;
+  background-image: url("../assets/svg/wallet.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .reg__set1 label.prepay::after {
   content: "Предоплата";
-  color: #323232;
-  opacity: 0.5;
 }
 .reg__set1 label.ip-ooo {
-  background: #CDCDFB url("../assets/svg/lock.svg") no-repeat center;
+  background-image: url("../assets/svg/retro-bag.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .reg__set1 label.ip-ooo::after {
   content: "ИП/ООО";
-  color: #323232;
-  opacity: 0.5;
 }
 .reg__set2 {
   display: flex;
   width: 450px;
   position: absolute;
   left: 25px;
-  top: 442px;
+  top: 420px;
   transition: 0.6s;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .reg__set2 {
-    top: 410px;
+    width: 336px;
   }
 }
 .reg__set2 input {
@@ -2546,15 +2594,39 @@ html {
   height: 91px;
   background: #FFFFFF;
   border-radius: 8px;
-  margin-right: 18px;
   transition: 0.3s;
   position: relative;
+}
+.reg__set2 label:not(:last-child) {
+  margin-right: 18px;
+}
+@media (max-width: 768px) {
+  .reg__set2 label {
+    width: 150px;
+    height: 70px;
+  }
 }
 .reg__set2 label[for=robokassa] {
   background: #FFFFFF url("../assets/img/robokassa.png") no-repeat center;
 }
+@media (max-width: 768px) {
+  .reg__set2 label[for=robokassa] {
+    background-size: 100%;
+  }
+}
 .reg__set2 label[for=prodamus] {
   background: #FFFFFF url("../assets/img/prodamus.png") no-repeat center;
+}
+@media (max-width: 768px) {
+  .reg__set2 label[for=prodamus] {
+    background-size: 100%;
+  }
+}
+.reg__ip {
+  display: none;
+}
+.reg__partpay {
+  display: none;
 }
 .reg__price {
   font-family: "Qisharon", sans-serif;
@@ -2571,4 +2643,68 @@ html {
 
 .tab-2 {
   display: none;
+}
+
+.reg__footer {
+  width: 100%;
+  background: linear-gradient(45deg, #7C6DE0 0%, #666BF7 100%);
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 132.2%;
+}
+.reg__footer .container {
+  padding: 52px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .reg__footer .container {
+    flex-direction: column;
+  }
+}
+
+.footer__left {
+  text-align: left;
+  width: 30%;
+}
+@media (max-width: 1024px) {
+  .footer__left {
+    text-align: center;
+    width: 100%;
+  }
+}
+.footer__link {
+  display: block;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+.footer__link.ip-mail {
+  text-decoration: none;
+}
+.footer__link.ip-tel {
+  text-decoration: none;
+}
+.footer__center {
+  text-align: center;
+  width: 35%;
+}
+@media (max-width: 1024px) {
+  .footer__center {
+    margin: 30px 0px;
+    width: 100%;
+  }
+}
+.footer__right {
+  text-align: right;
+  width: 30%;
+}
+@media (max-width: 1024px) {
+  .footer__right {
+    text-align: center;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -10,6 +10,7 @@ const salary = document.querySelector('.reg__subtitle span');
 
 title.innerText = localStorage.getItem('title');
 salary.innerText = `от ${localStorage.getItem('salary')} руб`;
+//centerFooter.innerText = `${localStorage.getItem('org_name')}${localStorage.getItem('org_data')}`;
 
 const order = document.querySelector('.reg__order');
 const userName = document.querySelector('.reg__user-name');
@@ -19,6 +20,38 @@ const userMail = document.querySelector('.reg__user-mail');
 const inputName = document.querySelector('#user-name');
 const inputPhone = document.querySelector('#user-phone');
 const inputMail = document.querySelector('#user-mail');
+const inputIp = document.querySelector('#user-ip');
+const inputInn = document.querySelector('#user-inn');
+const inputKpp = document.querySelector('#user-kpp');
+
+const regIp = document.querySelector('.reg__ip');
+const regPart = document.querySelector('.reg__partpay');
+const price = document.querySelector('.reg__price');
+
+const set1 = document.querySelector('.reg__set1');
+set1.addEventListener('click', (event) => {
+  if(event.target.classList.contains('js-radio-set1') && event.target.classList.contains('ip-ooo')) {
+    set2.style.display = 'none';
+    regIp.style.display = 'block';
+    price.style.marginTop = '0';
+    regPart.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('part')) {
+    set2.style.display = 'none';
+    regPart.style.display = 'block';
+    price.style.marginTop = '0';
+    regIp.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
+    set2.style.display = '';
+    price.style.marginTop = '';
+    regIp.style.display = '';
+    regPart.style.display = '';
+  } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('prepay')) {
+    set2.style.display = '';
+    price.style.marginTop = '';
+    regIp.style.display = '';
+    regPart.style.display = '';
+  }
+})
 
 const searchString = new URLSearchParams(window.location.search);
 console.log('searchString: ', searchString);
@@ -53,31 +86,7 @@ btnNext.addEventListener('click', () => {
       utm_campaign: utmCampaign,
       utm_group: utmGroup,
     })
-/*
-    fetch(`https://tdmnewreal.fvds.ru/academica/update_userdata`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        user_guid: localStorage.getItem('guid'),
-        name: inputName.value,
-        email: inputMail.value,
-        phone: inputPhone.value,
-        order_id: localStorage.getItem('order'),
-        back_link: `https://front.end/index.html?order_id=${localStorage.getItem('order')}`,
-        utm_source: utmSource,
-        utm_medium: utmMedium,
-        utm_content: utmContent,
-        utm_campaign: utmCampaign,
-        utm_group: utmGroup
-      })
-    }).then((response) => {
-      return response.json();
-    }).then(data => console.log(data))
-*/
-    fetch('https://marketplace-academica.ru/update_userdata?' + new URLSearchParams({
+    fetch('https://marketplace-academica.ru/academica/update_userdata?' + new URLSearchParams({
       user_guid: localStorage.getItem('guid'),
       name: inputName.value,
       email: inputMail.value,
