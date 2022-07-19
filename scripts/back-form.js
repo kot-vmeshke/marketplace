@@ -31,6 +31,7 @@ if (searchString.get('order_id') != null) {
   }).then(data => {
     console.log(data);
     tab1.style.display = 'none';
+    tab2.style.display = 'block';
     price.innerText = `${data.data.order.cost}₽`;
     order.innerText = `Заказ №${orderRecall}`;
     userName.innerText = data.data.user.name;
