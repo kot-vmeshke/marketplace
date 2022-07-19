@@ -34,8 +34,25 @@ const regPart = document.querySelector('.reg__partpay');
 const part = document.querySelector('#part');
 const card = document.querySelector('#card');
 const prepay = document.querySelector('#prepay');
+const months = document.querySelector('.months');
+const part6 = months.querySelector('#month-6');
+const part10 = months.querySelector('#month-10');
+const part12 = months.querySelector('#month-12');
+const inputPromo = document.querySelector('.promo');
+const btnPromo = document.querySelector('.promo-btn');
+
+let pricePromo;
+let cost;
+
 const price = document.querySelector('.reg__price');
 price.innerText = `${localStorage.getItem('price')}₽`;
+
+btnPromo.addEventListener('click', () => {
+  if (inputPromo.value === 'Academica3000') {
+    pricePromo = +localStorage.getItem('price') - 3000;
+    price.innerText = `${pricePromo}₽`;
+  }
+})
 
 const set1 = document.querySelector('.reg__set1');
 set1.addEventListener('click', (event) => {
@@ -46,7 +63,11 @@ set1.addEventListener('click', (event) => {
     regPart.style.display = '';
     robokassa.checked = false;
     regBtn.querySelector('.reg__btn-text').innerText = 'Перейти к оплате';
-    price.innerText = `${localStorage.getItem('price')}₽`;
+    if (pricePromo) {
+      price.innerText = `${pricePromo}₽`;
+    } else {
+      price.innerText = `${localStorage.getItem('price')}₽`;
+    }
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('part')) {
     set2.style.display = 'none';
     regPart.style.display = 'block';
@@ -54,7 +75,21 @@ set1.addEventListener('click', (event) => {
     regIp.style.display = '';
     robokassa.checked = false;
     regBtn.querySelector('.reg__btn-text').innerText = 'оставить заявку';
-    price.innerText = `${localStorage.getItem('price')}₽`;
+    part10.checked = true;
+    cost = Math.floor(+localStorage.getItem('part10') / 10);
+    price.innerText = `${cost}₽`;
+    months.addEventListener('click', () => {
+      if(part6.checked) {
+        cost = Math.floor(+localStorage.getItem('part6') / 6);
+        price.innerText = `${cost}₽`;
+      } else if(part10.checked) {
+        cost = Math.floor(+localStorage.getItem('part10') / 10);
+        price.innerText = `${cost}₽`;
+      } else if(part12.checked) {
+        cost = Math.floor(+localStorage.getItem('part12') / 12);
+        price.innerText = `${cost}₽`;
+      }
+    })
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
     set2.style.display = '';
     price.style.marginTop = '';
@@ -62,7 +97,11 @@ set1.addEventListener('click', (event) => {
     regPart.style.display = '';
     regBtn.querySelector('.reg__btn-text').innerText = 'Перейти к оплате';
     robokassa.checked = true;
-    price.innerText = `${localStorage.getItem('price')}₽`;
+    if (pricePromo) {
+      price.innerText = `${pricePromo}₽`;
+    } else {
+      price.innerText = `${localStorage.getItem('price')}₽`;
+    }
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('prepay')) {
     set2.style.display = '';
     price.style.marginTop = '';
@@ -100,6 +139,7 @@ btnNext.addEventListener('click', () => {
       email: inputMail.value,
       phone: inputPhone.value,
       order_id: localStorage.getItem('order'),
+      new_cost: pricePromo || '',
       back_link: `https://marketplace-academica.ru/form.html?order_id=${localStorage.getItem('order')}`,
       utm_source: utmSource,
       utm_medium: utmMedium,
@@ -113,6 +153,7 @@ btnNext.addEventListener('click', () => {
       email: inputMail.value,
       phone: inputPhone.value,
       order_id: localStorage.getItem('order'),
+      new_cost: pricePromo || '',
       back_link: `https://marketplace-academica.ru/form.html?order_id=${localStorage.getItem('order')}`,
       utm_source: utmSource,
       utm_medium: utmMedium,
@@ -146,14 +187,11 @@ regBtn.addEventListener('click', (event) => {
       }
     }).then(data => {
       console.log(data);
-      console.log('inputIp.value: ', inputIp.value);
-      console.log('inputInn.value: ', inputInn.value);
-      console.log('inputKpp.value: ', inputKpp.value);
-      console.log(window.location.href = data.data.payment_link);
       window.location.href = data.data.payment_link;
     })
   } else if (part.checked) {
-    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}&loan_cost=1000000000`, {
+    console.log(cost);
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}&loan_cost=${cost}`, {
       method: 'POST',
     }).then((response) => {
       if (response.ok) {
@@ -164,6 +202,7 @@ regBtn.addEventListener('click', (event) => {
     }).then(data => {
       console.log(data);
       alert(`${data.message}`);
+      window.location.href = '../index.html';
     })
   } else if(robokassa.checked && card.checked) {
     fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=robokassa`, {

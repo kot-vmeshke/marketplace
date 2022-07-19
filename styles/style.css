@@ -2032,7 +2032,7 @@ html {
   font-family: "Qisharon", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 55px;
+  font-size: 45px;
   line-height: 66px;
   text-align: center;
   color: #323232;
@@ -2045,7 +2045,7 @@ html {
 }
 @media (max-width: 768px) {
   .rate__price {
-    font-size: 44px;
+    font-size: 34px;
   }
 }
 .rate__price-description {
@@ -2700,7 +2700,7 @@ html {
   margin-top: 137px;
 }
 
-.tab-1 {
+.tab-2 {
   display: none;
 }
 
