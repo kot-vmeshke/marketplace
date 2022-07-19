@@ -408,6 +408,7 @@
       height: 91px;
       background: #FFFFFF;
       border-radius: 8px;
+      cursor: pointer;
       &:not(:last-child) {
         margin-right: 18px;
       }
@@ -454,7 +455,7 @@
   
 
 }
-.tab-1 {
+.tab-2 {
   display: none;
 }
 

@@ -2594,6 +2594,7 @@ html {
   height: 91px;
   background: #FFFFFF;
   border-radius: 8px;
+  cursor: pointer;
   transition: 0.3s;
   position: relative;
 }
@@ -2641,7 +2642,7 @@ html {
   margin-top: 137px;
 }
 
-.tab-1 {
+.tab-2 {
   display: none;
 }
 

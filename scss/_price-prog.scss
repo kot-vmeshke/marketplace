@@ -201,6 +201,7 @@
     width: 300px;
     transition: 0.3s;
     border: none;
+    cursor: pointer;
     &:hover {
       box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
     }
