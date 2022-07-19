@@ -45,6 +45,7 @@ set1.addEventListener('click', (event) => {
     price.style.marginTop = '0';
     regPart.style.display = '';
     robokassa.checked = false;
+    regBtn.querySelector('.reg__btn-text').innerText = 'Перейти к оплате';
     price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('part')) {
     set2.style.display = 'none';
@@ -53,19 +54,22 @@ set1.addEventListener('click', (event) => {
     regIp.style.display = '';
     robokassa.checked = false;
     regBtn.querySelector('.reg__btn-text').innerText = 'оставить заявку';
-    console.log('robokassa.checked: ', robokassa.checked);
     price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
     set2.style.display = '';
     price.style.marginTop = '';
     regIp.style.display = '';
     regPart.style.display = '';
+    regBtn.querySelector('.reg__btn-text').innerText = 'Перейти к оплате';
+    robokassa.checked = true;
     price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('prepay')) {
     set2.style.display = '';
     price.style.marginTop = '';
     regIp.style.display = '';
     regPart.style.display = '';
+    regBtn.querySelector('.reg__btn-text').innerText = 'Перейти к оплате';
+    robokassa.checked = true;
     price.innerText = '2 000₽'
   }
 })
@@ -132,7 +136,7 @@ btnNext.addEventListener('click', () => {
 regBtn.addEventListener('click', (event) => {
   event.preventDefault();
   if (ip.checked) {
-    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value}`, {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value || '000000000'}`, {
       method: 'POST',
     }).then((response) => {
       if (response.ok) {
@@ -149,7 +153,7 @@ regBtn.addEventListener('click', (event) => {
       window.location.href = data.data.payment_link;
     })
   } else if (part.checked) {
-    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}`, {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}&loan_cost=1000000000`, {
       method: 'POST',
     }).then((response) => {
       if (response.ok) {
