@@ -383,7 +383,7 @@
     width: 450px;
     position: absolute;
     left: 25px;
-    top: 420px;
+    top: 355px;
     transition: 0.6s;
     @media (max-width: 768px) {
       width: 336px;
@@ -433,8 +433,63 @@
     }
   }
 
+  & .months {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    & input {
+      display: none;
+      &:checked + label {
+        border: 1px solid #6564DD;
+      }
+    }
+    & label {
+      background: #F0F0FF;
+      border: 1px solid #F0F0FF;
+      border-radius: 16px;
+      padding: 10px 5px;
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 25px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: $color-text;
+      text-indent: 0px;
+      max-width: 105px;
+      @media (max-width: 480px) {
+        max-width: 100%;
+      }
+      &:hover {
+        border: 1px solid #6564DD;
+      }
+    }
+  }
+
   &__ip {
     display: none;
+  }
+  &__ip-text {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #FF0000;
+    margin-bottom: 30px;
+    & span:not(.ip-text__user-id) {
+      display: block;
+      margin-top: 10px;
+      color: #000000;
+    }
   }
   &__partpay {
     display: none;

@@ -12,10 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../styles/style.css" />
+  <!-- Carrot quest BEGIN -->
+<script type="text/javascript">
+  !function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://cdn.carrotquest.app/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("51610-23145017e0c7c07689853e2057");
+  </script>
+  <!-- Carrot quest END -->
 </head>
 
 <body class="reg">
-  <div class="reg__container">
+  <div class="reg__container container">
     <h1 class="reg__title">Ассистент + аккаунт-менеджер Wildberries</h1>
     <div class="reg__subtitle">ЗП на рынке: <span>от 90 000 руб</span></div>
     <form action="#" class="reg__form" method="post">
@@ -35,7 +40,11 @@
             Ваша почта
             <input type="email" name="user-mail" id="user-mail" placeholder="example@mail.ru" required />
           </label>
-          <a href="#" class="reg__link">Я даю согласие на обработку <span>персональных данных</span></a>
+          <div class="reg__promo">
+            <input type="text" class="promo" placeholder="есть промокод?" />
+            <button class="promo-btn" type="button"></button>
+          </div>
+          <a href="./privat.html" class="reg__link">Я даю согласие на обработку <span>персональных данных</span></a>
           <button type="button" class="reg__btn">
             <span class="reg__btn-span"></span><span class="reg__btn-text">Отправить</span>
           </button>
@@ -50,10 +59,6 @@
             <span class="reg__user-name">Виктор Пелевин</span>
             <span class="reg__user-mail">pelevin@yandex.ru</span>
             <span class="reg__user-phone">+79119111911</span>
-          </div>
-          <div class="reg__promo">
-            <input type="text" class="promo" placeholder="есть промокод?" />
-            <button class="promo-btn" type="button"></button>
           </div>
           <div class="reg__set1">
             <input type="radio" name="set1" id="card" checked />
@@ -72,6 +77,9 @@
             <label for="prodamus"></label>
           </div>
           <div class="reg__ip">
+            <p class="reg__ip-text">
+              Внимание! В назначении платежа указывайте строго то наименование услуги, что написано в&nbsp;счете. Иначе платеж может обрабатыватья от&nbsp;5&nbsp;рабочих дней. <span>Ваше назначение платежа:</span>Оплата за услугу дополнительного образования <span class="ip-text__user-id">id-X</span>
+            </p>
             <label for="user-ip">
               Наименование компании:
               <input type="text" name="user-ip" id="user-ip" placeholder="ИП Иван Сергеевич Иванов" required />
@@ -86,13 +94,21 @@
             </label>
           </div>
           <div class="reg__partpay">
-            <label for="user-fullname">
-              Имя:
-              <input type="text" name="user-fullname" id="user-fullname" placeholder="Иван" required />
-            </label>
+            <div class="months">
+              <input type="radio" name="set3" id="month-6"/>
+              <label for="month-6" class="month">6 месяцев</label>
+              <input type="radio" name="set3" id="month-9" checked />
+              <label for="month-9" class="month">9 месяцев</label>
+              <input type="radio" name="set3" id="month-12"/>
+              <label for="month-12" class="month">12 месяцев</label>
+            </div>
             <label for="user-surname">
               Фамилия:
               <input type="text" name="user-surname" id="user-surname" placeholder="Иванов" required />
+            </label>
+            <label for="user-fullname">
+              Имя:
+              <input type="text" name="user-fullname" id="user-fullname" placeholder="Иван" required />
             </label>
             <label for="user-fathername">
               Отчество:
@@ -110,8 +126,8 @@
   <footer class="reg__footer footer">
     <div class="container">
       <div class="footer__left">
-        <a href="#" class="footer__link oferta">Договор оферты</a>
-        <a href="#" class="footer__link privacy">Политика конфиденциальности</a>
+        <a href="./oferta.html" class="footer__link oferta">Договор оферты</a>
+        <a href="./privat.html" class="footer__link privacy">Политика конфиденциальности</a>
       </div>
       <div class="footer__center">
         <p class="footer__text">Индивидуальный предприниматель</p>

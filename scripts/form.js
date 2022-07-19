@@ -7,9 +7,11 @@ const tab1 = document.querySelector('.tab-1');
 const tab2 = document.querySelector('.tab-2');
 const title = document.querySelector('.reg__title');
 const salary = document.querySelector('.reg__subtitle span');
+const ipTextUserId = document.querySelector('.ip-text__user-id');
 
 title.innerText = localStorage.getItem('title');
 salary.innerText = `от ${localStorage.getItem('salary')} руб`;
+ipTextUserId.innerText = `id-${localStorage.getItem('order')}`;
 
 const order = document.querySelector('.reg__order');
 const userName = document.querySelector('.reg__user-name');
@@ -30,6 +32,8 @@ const regIp = document.querySelector('.reg__ip');
 const ip = document.querySelector('#ip-ooo');
 const regPart = document.querySelector('.reg__partpay');
 const part = document.querySelector('#part');
+const card = document.querySelector('#card');
+const prepay = document.querySelector('#prepay');
 const price = document.querySelector('.reg__price');
 price.innerText = `${localStorage.getItem('price')}₽`;
 
@@ -48,6 +52,8 @@ set1.addEventListener('click', (event) => {
     price.style.marginTop = '0';
     regIp.style.display = '';
     robokassa.checked = false;
+    regBtn.querySelector('.reg__btn-text').innerText = 'оставить заявку';
+    console.log('robokassa.checked: ', robokassa.checked);
     price.innerText = `${localStorage.getItem('price')}₽`;
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
     set2.style.display = '';
@@ -75,43 +81,10 @@ const utmGroup = searchString.get('utm_group') || '';
 prodamus.addEventListener('change', () => {
   set2.style.left = 'auto';
   set2.style.right = '25px';
-  console.log(localStorage.getItem('order'));
-  console.log(userMail.innerText);
-  console.log(localStorage.getItem('guid'));
-  fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=prodamus`, {
-    method: 'POST',
-  }).then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      console.error('error');
-    }
-  }).then(data => {
-    console.log(data);
-    regBtn.addEventListener('click', () => {
-      window.location.href = data.data.payment_link;
-      console.log('data.data.payment_link: ', data.data.payment_link);
-    })
-  })
 })
 robokassa.addEventListener('change', () => {
   set2.style.left = '';
   set2.style.right = '';
-  fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=robokassa`, {
-    method: 'POST',
-  }).then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      console.error('error');
-    }
-  }).then(data => {
-    console.log(data);
-    regBtn.addEventListener('click', () => {
-      window.location.href = data.data.payment_link;
-      console.log('data.data.payment_link: ', data.data.payment_link);
-    })
-  })
 })
 btnNext.addEventListener('click', () => {
   if (inputName.value && inputPhone.value && inputMail.value) {
@@ -175,8 +148,7 @@ regBtn.addEventListener('click', (event) => {
       console.log(window.location.href = data.data.payment_link);
       window.location.href = data.data.payment_link;
     })
-  }
-  if (part.checked) {
+  } else if (part.checked) {
     fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}`, {
       method: 'POST',
     }).then((response) => {
@@ -187,16 +159,49 @@ regBtn.addEventListener('click', (event) => {
       }
     }).then(data => {
       console.log(data);
-      // console.log(inputFullname.value);
-      // console.log(inputFathername.value);
-      // console.log(inputSurname.value);
-      // console.log(userPhone.innerText.substring(2));
-      // console.log(window.location.href = data.data.payment_link);
-      // window.location.href = data.data.payment_link;
+      alert(`${data.message}`);
     })
-  }
-  if(robokassa.checked) {
+  } else if(robokassa.checked && card.checked) {
     fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=robokassa`, {
+      method: 'POST',
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error('error');
+      }
+    }).then(data => {
+      console.log(data);
+      window.location.href = data.data.payment_link;
+    })
+  } else if(prodamus.checked && card.checked) {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=prodamus`, {
+      method: 'POST',
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error('error');
+      }
+    }).then(data => {
+      console.log(data);
+      window.location.href = data.data.payment_link;
+    })
+  } else if(robokassa.checked && prepay.checked) {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=robokassa&prepay=1`, {
+      method: 'POST',
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error('error');
+      }
+    }).then(data => {
+      console.log(data);
+      window.location.href = data.data.payment_link;
+    })
+  } else if(prodamus.checked && prepay.checked) {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${localStorage.getItem('order')}&guid=${localStorage.getItem('guid')}&merchant=prodamus&prepay=1`, {
       method: 'POST',
     }).then((response) => {
       if (response.ok) {
