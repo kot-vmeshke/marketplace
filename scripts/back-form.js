@@ -30,7 +30,7 @@ if (searchString.get('order_id') != null) {
     return response.json();
   }).then(data => {
     console.log(data);
-    if (data.data.user.name === '' || data.data.user.phone === '' || data.data.user.email || '') {
+    if (data.data.user.name.length === 0 || data.data.user.phone.length === 0 || data.data.user.email.length === 0) {
       tab1.style.display = 'block';
       tab2.style.display = 'none';
     } else {

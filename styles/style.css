@@ -2079,6 +2079,7 @@ html {
   max-width: 320px;
   transition: 0.3s;
   border: none;
+  cursor: pointer;
 }
 .rate__offer-btn:hover {
   box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
@@ -2126,6 +2127,16 @@ html {
     font-size: 16px;
     line-height: 21px;
   }
+}
+.rate__program-link {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 132.2%;
+  text-align: center;
+  color: #323232;
+  margin-top: 30px;
 }
 .rate__descr {
   font-family: "Roboto", sans-serif;
@@ -2608,7 +2619,7 @@ html {
 .reg__set2 label[for=robokassa]::after {
   position: absolute;
   width: 100%;
-  content: "Для карт РФ";
+  content: "Карты РФ";
   display: block;
   text-align: center;
   bottom: -30px;
@@ -2627,7 +2638,7 @@ html {
 .reg__set2 label[for=prodamus]::after {
   position: absolute;
   width: 100%;
-  content: "Для зарубежных карт";
+  content: "РФ, СНГ, др. страны";
   display: block;
   text-align: center;
   bottom: -30px;
@@ -2714,6 +2725,10 @@ html {
   display: block;
   margin-bottom: 7px;
   margin-top: 30px;
+}
+
+.tab-2 {
+  display: none;
 }
 
 .reg__footer {

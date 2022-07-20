@@ -419,7 +419,7 @@
         &::after {
           position: absolute;
           width: 100%;
-          content: 'Для карт РФ';
+          content: 'Карты РФ';
           display: block;
           text-align: center;
           bottom: -30px;
@@ -436,7 +436,7 @@
         &::after {
           position: absolute;
           width: 100%;
-          content: 'Для зарубежных карт';
+          content: 'РФ, СНГ, др. страны';
           display: block;
           text-align: center;
           bottom: -30px;
@@ -527,9 +527,9 @@
   
 
 }
-// .tab-2 {
-//   display: none;
-// }
+.tab-2 {
+  display: none;
+}
 
 .reg {
 
