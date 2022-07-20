@@ -13,8 +13,8 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="../styles/style.css" />
   <!-- Carrot quest BEGIN -->
-<script type="text/javascript">
-  !function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://cdn.carrotquest.app/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("51610-23145017e0c7c07689853e2057");
+  <script type="text/javascript">
+    !function () { function t(t, e) { return function () { window.carrotquestasync.push(t, arguments) } } if ("undefined" == typeof carrotquest) { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://cdn.carrotquest.app/api.min.js", document.getElementsByTagName("head")[0].appendChild(e), window.carrotquest = {}, window.carrotquestasync = [], carrotquest.settings = {}; for (var n = ["connect", "track", "identify", "auth", "onReady", "addCallback", "removeCallback", "trackMessageInteraction"], a = 0; a < n.length; a++)carrotquest[n[a]] = t(n[a]) } }(), carrotquest.connect("51610-23145017e0c7c07689853e2057");
   </script>
   <!-- Carrot quest END -->
 </head>
@@ -44,7 +44,8 @@
             <input type="text" class="promo" placeholder="есть промокод?" />
             <button class="promo-btn" type="button"></button>
           </div>
-          <a href="./privat.html" class="reg__link">Я даю согласие на обработку <span>персональных данных</span></a>
+          <a href="./privat.html" class="reg__link" target="_blank">Я даю согласие на обработку <span>персональных
+              данных</span></a>
           <button type="button" class="reg__btn">
             <span class="reg__btn-span"></span><span class="reg__btn-text">Отправить</span>
           </button>
@@ -78,7 +79,9 @@
           </div>
           <div class="reg__ip">
             <p class="reg__ip-text">
-              Внимание! В назначении платежа указывайте строго то наименование услуги, что написано в&nbsp;счете. Иначе платеж может обрабатываться от&nbsp;5&nbsp;рабочих дней. <span>Ваше назначение платежа:</span>Оплата за услугу дополнительного образования <span class="ip-text__user-id">id-X</span>
+              Внимание! В назначении платежа указывайте строго то наименование услуги, что написано в&nbsp;счете. Иначе
+              платеж может обрабатываться от&nbsp;5&nbsp;рабочих дней. <span>Ваше назначение платежа:</span>Оплата за
+              услугу дополнительного образования <span class="ip-text__user-id">id-X</span>
             </p>
             <label for="user-ip">
               Наименование компании:
@@ -90,16 +93,16 @@
             </label>
             <label for="user-kpp">
               КПП:
-              <input type="text" name="user-kpp" id="user-kpp" placeholder="77777777777"/>
+              <input type="text" name="user-kpp" id="user-kpp" placeholder="Оставьте пустым если нет КПП" />
             </label>
           </div>
           <div class="reg__partpay">
             <div class="months">
-              <input type="radio" name="set3" id="month-6"/>
+              <input type="radio" name="set3" id="month-6" />
               <label for="month-6" class="month">6 месяцев</label>
               <input type="radio" name="set3" id="month-10" checked />
               <label for="month-10" class="month">10 месяцев</label>
-              <input type="radio" name="set3" id="month-12"/>
+              <input type="radio" name="set3" id="month-12" />
               <label for="month-12" class="month">12 месяцев</label>
             </div>
             <label for="user-surname">
@@ -180,6 +183,25 @@
       })
     );
   </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(89624411, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/89624411" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>

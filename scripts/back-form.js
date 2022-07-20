@@ -54,7 +54,10 @@ if (searchString.get('order_id') != null) {
             }
           }).then(data => {
             console.log(data);
-            window.location.href = data.data.payment_link;
+            setTimeout(() => {
+              window.location.href = './order.html';
+            }, 0)
+            window.open(`${data.data.payment_link}`, '_blank').focus();
           })
         } else if (part.checked) {
           fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${data.data.user.user_guid}&order_id=${orderRecall}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${data.data.user.phone.substring(1)}&loan_cost=1000000000`, {
@@ -62,12 +65,15 @@ if (searchString.get('order_id') != null) {
           }).then((response) => {
             if (response.ok) {
               return response.json();
+            } else if (response.status === 500){
+              alert('Слишком много запросов. Повторите через несколько минут');
             } else {
               console.error('error');
             }
           }).then(data => {
             console.log(data);
             alert(`${data.message}`);
+            window.location.href = '../index.html';
           })
         } else if(robokassa.checked && card.checked) {
           fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=robokassa`, {

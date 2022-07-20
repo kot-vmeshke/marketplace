@@ -48,10 +48,20 @@ let fullCost;
 const price = document.querySelector('.reg__price');
 price.innerText = `${localStorage.getItem('price')}₽`;
 
+const formLink = document.querySelector(".reg__link");
+formLink.setAttribute('href', localStorage.getItem('conf_policy'));
+
+
 btnPromo.addEventListener('click', () => {
-  if (inputPromo.value.toUpperCase() === 'Academica3000'.toUpperCase()) {
+  if (inputPromo.value.toUpperCase() === 'chek3000'.toUpperCase()) {
+    btnPromo.style.backgroundColor = '#00904B';
+    inputPromo.style.color = '#00904B';
     pricePromo = +localStorage.getItem('price') - 3000;
     price.innerText = `${pricePromo}₽`;
+  } else if (inputPromo.value.toUpperCase() !== 'chek3000'.toUpperCase()) {
+    btnPromo.style.backgroundColor = '#FF0000';
+    inputPromo.value = '';
+    inputPromo.placeholder = 'Неверный промокод';
   }
 })
 
@@ -119,21 +129,12 @@ set1.addEventListener('click', (event) => {
 })
 
 const searchString = new URLSearchParams(window.location.search);
-console.log('searchString: ', searchString);
 const utmSource = searchString.get('utm_source') || '';
 const utmMedium = searchString.get('utm_medium') || '';
 const utmContent = searchString.get('utm_content') || '';
 const utmCampaign = searchString.get('utm_campaign') || '';
 const utmGroup = searchString.get('utm_group') || '';
 
-// prodamus.addEventListener('change', () => {
-//   set2.style.left = 'auto';
-//   set2.style.right = '25px';
-// })
-// robokassa.addEventListener('change', () => {
-//   set2.style.left = '';
-//   set2.style.right = '';
-// })
 btnNext.addEventListener('click', () => {
   if (inputName.value && inputPhone.value && inputMail.value) {
     tab1.style.display = 'none';
@@ -192,7 +193,10 @@ regBtn.addEventListener('click', (event) => {
       }
     }).then(data => {
       console.log(data);
-      window.location.href = data.data.payment_link;
+      setTimeout(() => {
+        window.location.href = './order.html';
+      }, 0)
+      window.open(`${data.data.payment_link}`, '_blank').focus();
     })
   } else if (part.checked) {
     console.log(cost);

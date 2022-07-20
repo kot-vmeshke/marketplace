@@ -380,18 +380,12 @@
 
   &__set2 {
     display: flex;
-    width: 450px;
-    position: absolute;
-    left: 25px;
-    top: 355px;
-    transition: 0.6s;
-    @media (max-width: 768px) {
-      width: 336px;
-    }
+    justify-content: center;
     & input {
       display: none;
       &:checked + label {
         box-shadow: 0px 0px 12px rgba(142, 141, 255, 0.31);
+        border: 1px solid #6564DD;
         &::before {
           position: absolute;
           content: '';
@@ -404,8 +398,8 @@
       }
     }
     & label {
-      width: 215px;
-      height: 91px;
+      width: 190px;
+      height: 80px;
       background: #FFFFFF;
       border-radius: 8px;
       cursor: pointer;
@@ -415,20 +409,17 @@
       transition: 0.3s;
       position: relative;
       @media (max-width: 768px) {
-        width: 150px;
+        width: 100%;
+        max-width: 150px;
         height: 70px;
       }
       &[for=robokassa] {
         background: #FFFFFF url('../assets/img/robokassa.png') no-repeat center;
-        @media (max-width: 768px) {
-          background-size: 100%;
-        }
+        background-size: 100%;
       }
       &[for=prodamus] {
         background: #FFFFFF url('../assets/img/prodamus.png') no-repeat center;
-        @media (max-width: 768px) {
-          background-size: 100%;
-        }
+        background-size: 100%;
       }
     }
   }
@@ -505,12 +496,12 @@
     color: $color-text;
     display: block;
     margin-bottom: 7px;
-    margin-top: 137px;
+    margin-top: 30px;
   }
   
 
 }
-.tab-2 {
+.tab-1 {
   display: none;
 }
 

@@ -2563,22 +2563,14 @@ html {
 }
 .reg__set2 {
   display: flex;
-  width: 450px;
-  position: absolute;
-  left: 25px;
-  top: 355px;
-  transition: 0.6s;
-}
-@media (max-width: 768px) {
-  .reg__set2 {
-    width: 336px;
-  }
+  justify-content: center;
 }
 .reg__set2 input {
   display: none;
 }
 .reg__set2 input:checked + label {
   box-shadow: 0px 0px 12px rgba(142, 141, 255, 0.31);
+  border: 1px solid #6564DD;
 }
 .reg__set2 input:checked + label::before {
   position: absolute;
@@ -2590,8 +2582,8 @@ html {
   height: 24px;
 }
 .reg__set2 label {
-  width: 215px;
-  height: 91px;
+  width: 190px;
+  height: 80px;
   background: #FFFFFF;
   border-radius: 8px;
   cursor: pointer;
@@ -2603,25 +2595,18 @@ html {
 }
 @media (max-width: 768px) {
   .reg__set2 label {
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
     height: 70px;
   }
 }
 .reg__set2 label[for=robokassa] {
   background: #FFFFFF url("../assets/img/robokassa.png") no-repeat center;
-}
-@media (max-width: 768px) {
-  .reg__set2 label[for=robokassa] {
-    background-size: 100%;
-  }
+  background-size: 100%;
 }
 .reg__set2 label[for=prodamus] {
   background: #FFFFFF url("../assets/img/prodamus.png") no-repeat center;
-}
-@media (max-width: 768px) {
-  .reg__set2 label[for=prodamus] {
-    background-size: 100%;
-  }
+  background-size: 100%;
 }
 .reg .months {
   display: flex;
@@ -2697,10 +2682,10 @@ html {
   color: #323232;
   display: block;
   margin-bottom: 7px;
-  margin-top: 137px;
+  margin-top: 30px;
 }
 
-.tab-2 {
+.tab-1 {
   display: none;
 }
 

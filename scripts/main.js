@@ -18,6 +18,12 @@ window.addEventListener('load', () => {
       localStorage.setItem('org_data', data.data.org_data);
       localStorage.setItem('conf_policy', data.data.conf_policy);
       localStorage.setItem('oferta', data.data.oferta);
+      document.querySelector(".oferta").setAttribute('href', localStorage.getItem('oferta'));
+      document.querySelector(".privacy").setAttribute('href', localStorage.getItem('conf_policy'));
+      const formLink = document.querySelector(".form__link");
+      if (formLink) {
+        formLink.setAttribute('href', localStorage.getItem('conf_policy'));
+      }
       const centerFooter = document.querySelector('.footer__center');
       centerFooter.innerText = `${localStorage.getItem('org_name')}${localStorage.getItem('org_data')}`;
       const [btn] = buttons.filter(item => item !== null);
@@ -57,6 +63,12 @@ window.addEventListener('load', () => {
       localStorage.setItem('org_data', data.data.org_data);
       localStorage.setItem('conf_policy', data.data.conf_policy);
       localStorage.setItem('oferta', data.data.oferta);
+      document.querySelector(".oferta").setAttribute('href', localStorage.getItem('oferta'));
+      document.querySelector(".privacy").setAttribute('href', localStorage.getItem('conf_policy'));
+      const formLink = document.querySelector(".form__link");
+      if (formLink) {
+        formLink.setAttribute('href', localStorage.getItem('conf_policy'));
+      }
       const centerFooter = document.querySelector('.footer__center');
       centerFooter.innerText = `${localStorage.getItem('org_name')}${localStorage.getItem('org_data')}`;
       const [btn] = buttons.filter(item => item !== null);
