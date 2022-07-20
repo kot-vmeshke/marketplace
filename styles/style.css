@@ -763,7 +763,7 @@ html {
   box-shadow: 0px 7px 36px rgba(0, 0, 0, 0.11);
   border-radius: 19px;
   padding: 32px 23px;
-  min-height: 890px;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2032,7 +2032,7 @@ html {
   font-family: "Qisharon", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 45px;
+  font-size: 55px;
   line-height: 66px;
   text-align: center;
   color: #323232;
@@ -2045,7 +2045,7 @@ html {
 }
 @media (max-width: 768px) {
   .rate__price {
-    font-size: 34px;
+    font-size: 44px;
   }
 }
 .rate__price-description {
@@ -2691,7 +2691,7 @@ html {
   font-family: "Qisharon", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 66.1438px;
+  font-size: 50px;
   line-height: 79px;
   text-align: center;
   color: #323232;

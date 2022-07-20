@@ -30,94 +30,99 @@ if (searchString.get('order_id') != null) {
     return response.json();
   }).then(data => {
     console.log(data);
-    tab1.style.display = 'none';
-    tab2.style.display = 'block';
-    price.innerText = `${data.data.order.cost}₽`;
-    order.innerText = `Заказ №${orderRecall}`;
-    userName.innerText = data.data.user.name;
-    userPhone.innerText = data.data.user.phone;
-    userMail.innerText = data.data.user.email;
-    regBtn.addEventListener('click', (event) => {
-      event.preventDefault();
-      if (ip.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${localStorage.getItem('guid')}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value || '000000000'}`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          window.location.href = data.data.payment_link;
-        })
-      } else if (part.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${data.data.user.user_guid}&order_id=${orderRecall}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${data.data.user.phone.substring(1)}&loan_cost=1000000000`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          alert(`${data.message}`);
-        })
-      } else if(robokassa.checked && card.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=robokassa`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          window.location.href = data.data.payment_link;
-        })
-      } else if(prodamus.checked && card.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=prodamus`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          window.location.href = data.data.payment_link;
-        })
-      } else if(robokassa.checked && prepay.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=robokassa&prepay=1`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          window.location.href = data.data.payment_link;
-        })
-      } else if(prodamus.checked && prepay.checked) {
-        fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=prodamus&prepay=1`, {
-          method: 'POST',
-        }).then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.error('error');
-          }
-        }).then(data => {
-          console.log(data);
-          window.location.href = data.data.payment_link;
-        })
-      }
-    })
+    if (data.data.user.name === '' || data.data.user.phone === '' || data.data.user.email || '') {
+      tab1.style.display = 'block';
+      tab2.style.display = 'none';
+    } else {
+      tab1.style.display = 'none';
+      tab2.style.display = 'block';
+      price.innerText = `${data.data.order.cost}₽`;
+      order.innerText = `Заказ №${orderRecall}`;
+      userName.innerText = data.data.user.name;
+      userPhone.innerText = data.data.user.phone;
+      userMail.innerText = data.data.user.email;
+      regBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (ip.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${localStorage.getItem('guid')}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value || '000000000'}`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            window.location.href = data.data.payment_link;
+          })
+        } else if (part.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${data.data.user.user_guid}&order_id=${orderRecall}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${data.data.user.phone.substring(1)}&loan_cost=1000000000`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            alert(`${data.message}`);
+          })
+        } else if(robokassa.checked && card.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=robokassa`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            window.location.href = data.data.payment_link;
+          })
+        } else if(prodamus.checked && card.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=prodamus`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            window.location.href = data.data.payment_link;
+          })
+        } else if(robokassa.checked && prepay.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=robokassa&prepay=1`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            window.location.href = data.data.payment_link;
+          })
+        } else if(prodamus.checked && prepay.checked) {
+          fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${orderRecall}&guid=${data.data.user.user_guid}&merchant=prodamus&prepay=1`, {
+            method: 'POST',
+          }).then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error('error');
+            }
+          }).then(data => {
+            console.log(data);
+            window.location.href = data.data.payment_link;
+          })
+        }
+      })
+    }
   })
 }

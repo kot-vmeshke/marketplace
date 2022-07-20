@@ -43,12 +43,13 @@ const btnPromo = document.querySelector('.promo-btn');
 
 let pricePromo;
 let cost;
+let fullCost;
 
 const price = document.querySelector('.reg__price');
 price.innerText = `${localStorage.getItem('price')}₽`;
 
 btnPromo.addEventListener('click', () => {
-  if (inputPromo.value === 'Academica3000') {
+  if (inputPromo.value.toUpperCase() === 'Academica3000'.toUpperCase()) {
     pricePromo = +localStorage.getItem('price') - 3000;
     price.innerText = `${pricePromo}₽`;
   }
@@ -77,17 +78,21 @@ set1.addEventListener('click', (event) => {
     regBtn.querySelector('.reg__btn-text').innerText = 'оставить заявку';
     part10.checked = true;
     cost = Math.floor(+localStorage.getItem('part10') / 10);
-    price.innerText = `${cost}₽`;
+    fullCost = localStorage.getItem('part10');
+    price.innerText = `от ${cost}₽/мес`;
     months.addEventListener('click', () => {
       if(part6.checked) {
         cost = Math.floor(+localStorage.getItem('part6') / 6);
-        price.innerText = `${cost}₽`;
+        fullCost = localStorage.getItem('part6');
+        price.innerText = `от ${cost}₽/мес`;
       } else if(part10.checked) {
         cost = Math.floor(+localStorage.getItem('part10') / 10);
-        price.innerText = `${cost}₽`;
+        fullCost = localStorage.getItem('part10');
+        price.innerText = `от ${cost}₽/мес`;
       } else if(part12.checked) {
         cost = Math.floor(+localStorage.getItem('part12') / 12);
-        price.innerText = `${cost}₽`;
+        fullCost = localStorage.getItem('part12');
+        price.innerText = `от ${cost}₽/мес`;
       }
     })
   } else if (event.target.classList.contains('js-radio-set1') && event.target.classList.contains('card')) {
@@ -121,14 +126,14 @@ const utmContent = searchString.get('utm_content') || '';
 const utmCampaign = searchString.get('utm_campaign') || '';
 const utmGroup = searchString.get('utm_group') || '';
 
-prodamus.addEventListener('change', () => {
-  set2.style.left = 'auto';
-  set2.style.right = '25px';
-})
-robokassa.addEventListener('change', () => {
-  set2.style.left = '';
-  set2.style.right = '';
-})
+// prodamus.addEventListener('change', () => {
+//   set2.style.left = 'auto';
+//   set2.style.right = '25px';
+// })
+// robokassa.addEventListener('change', () => {
+//   set2.style.left = '';
+//   set2.style.right = '';
+// })
 btnNext.addEventListener('click', () => {
   if (inputName.value && inputPhone.value && inputMail.value) {
     tab1.style.display = 'none';
@@ -191,11 +196,13 @@ regBtn.addEventListener('click', (event) => {
     })
   } else if (part.checked) {
     console.log(cost);
-    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(2)}&loan_cost=${cost}`, {
+    fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${localStorage.getItem('guid')}&order_id=${localStorage.getItem('order')}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(1)}&loan_cost=${fullCost}`, {
       method: 'POST',
     }).then((response) => {
       if (response.ok) {
         return response.json();
+      } else if (response.status === 500){
+        alert('Слишком много запросов. Повторите через несколько минут');
       } else {
         console.error('error');
       }
