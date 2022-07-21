@@ -22,6 +22,9 @@
     "message": "User and order data updated successfully"
   }
 */
+
+const searchString = new URLSearchParams(window.location.search);
+
 if (searchString.get('order_id') != null) {
   const orderRecall = searchString.get('order_id');
   fetch(`https://marketplace-academica.ru/academica/recall_order?order_id=${orderRecall}`, {

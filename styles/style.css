@@ -2726,6 +2726,15 @@ html {
   margin-bottom: 7px;
   margin-top: 30px;
 }
+.reg__partpay-text {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #EA7543;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
 
 .tab-2 {
   display: none;
