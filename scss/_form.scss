@@ -251,7 +251,7 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     & .promo {
       background: #FFFFFF;
       border-radius: 8px;
@@ -275,17 +275,38 @@
         text-decoration: underline;
       }
     }
+
     & .promo-btn {
       position: absolute;
-      background: $color-project url('../assets/svg/Icon.svg') no-repeat center;
+      background: $color-project;
       display: block;
-      width: 42px;
+      width: 125px;
       height: 42px;
       top: 0px;
       right: 0px;
       border: none;
       cursor: pointer;
+      color: $color-light;
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      text-transform: uppercase;
     }
+    
+  }
+  &__promo-text {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14.888px;
+    line-height: 140%;
+    color: $color-project;
+    text-align: center;
+    margin: 0 0 25px;
+    display: block;
   }
 
   &__set1 {

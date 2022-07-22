@@ -2424,7 +2424,7 @@ html {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .reg__promo .promo {
   background: #FFFFFF;
@@ -2471,14 +2471,33 @@ html {
 }
 .reg__promo .promo-btn {
   position: absolute;
-  background: #564AA4 url("../assets/svg/Icon.svg") no-repeat center;
+  background: #564AA4;
   display: block;
-  width: 42px;
+  width: 125px;
   height: 42px;
   top: 0px;
   right: 0px;
   border: none;
   cursor: pointer;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+.reg__promo-text {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14.888px;
+  line-height: 140%;
+  color: #564AA4;
+  text-align: center;
+  margin: 0 0 25px;
+  display: block;
 }
 .reg__set1 {
   display: flex;
