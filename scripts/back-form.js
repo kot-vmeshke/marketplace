@@ -130,6 +130,7 @@ window.addEventListener('load', () => {
             regBtn.querySelector('.reg__btn-text').innerText = 'оставить заявку';
             part10.checked = true;
             let partSum6, partSum10, partSum12;
+            // let diff;
             if (data.data.order.plan_id == '3544961') {
               //'Ассистент + аккаунт-менеджер Wildberries'
               partSum6 = 20000;
@@ -202,7 +203,7 @@ window.addEventListener('load', () => {
               window.open(`${data.data.payment_link}`, '_blank').focus();
             })
           } else if (part.checked) {
-            fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${data.data.user.user_guid}&order_id=${orderRecall}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${data.data.user.phone.substring(1)}&loan_cost=1000000000`, {
+            fetch(`https://marketplace-academica.ru/academica/generate_paylink?guid=${data.data.user.user_guid}&order_id=${orderRecall}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${data.data.user.phone.substring(1)}&loan_cost=${fullCost}`, {
               method: 'POST',
             }).then((response) => {
               if (response.ok) {
