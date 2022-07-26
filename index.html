@@ -1,704 +1,932 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace Academica</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Carrot quest BEGIN -->
+    <script type="text/javascript">
+      !(function () {
+        function t(t, e) {
+          return function () {
+            window.carrotquestasync.push(t, arguments);
+          };
+        }
+        if ("undefined" == typeof carrotquest) {
+          var e = document.createElement("script");
+          (e.type = "text/javascript"),
+            (e.async = !0),
+            (e.src = "https://cdn.carrotquest.app/api.min.js"),
+            document.getElementsByTagName("head")[0].appendChild(e),
+            (window.carrotquest = {}),
+            (window.carrotquestasync = []),
+            (carrotquest.settings = {});
+          for (
+            var n = [
+                "connect",
+                "track",
+                "identify",
+                "auth",
+                "onReady",
+                "addCallback",
+                "removeCallback",
+                "trackMessageInteraction",
+              ],
+              a = 0;
+            a < n.length;
+            a++
+          )
+            carrotquest[n[a]] = t(n[a]);
+        }
+      })(),
+        carrotquest.connect("51610-23145017e0c7c07689853e2057");
+    </script>
+    <!-- Carrot quest END -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketplace Academica</title>
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <!-- Carrot quest BEGIN -->
-  <script type="text/javascript">
-    !(function () {
-      function t(t, e) {
-        return function () {
-          window.carrotquestasync.push(t, arguments);
-        };
-      }
-      if ("undefined" == typeof carrotquest) {
-        var e = document.createElement("script");
-        (e.type = "text/javascript"),
-          (e.async = !0),
-          (e.src = "https://cdn.carrotquest.app/api.min.js"),
-          document.getElementsByTagName("head")[0].appendChild(e),
-          (window.carrotquest = {}),
-          (window.carrotquestasync = []),
-          (carrotquest.settings = {});
-        for (
-          var n = [
-            "connect",
-            "track",
-            "identify",
-            "auth",
-            "onReady",
-            "addCallback",
-            "removeCallback",
-            "trackMessageInteraction",
-          ],
-          a = 0;
-          a < n.length;
-          a++
-        )
-          carrotquest[n[a]] = t(n[a]);
-      }
-    })(),
-      carrotquest.connect("51610-23145017e0c7c07689853e2057");
-  </script>
-  <!-- Carrot quest END -->
-</head>
-
-<body>
-  <main class="main">
-    <section class="hero" id="hero">
-      <div class="container hero__container">
-        <header class="header">
-          <nav class="header__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#prof" class="nav__link">Профессии</a>
-              </li>
-              <li class="nav__item">
-                <a href="#price" class="nav__link">Стоимость&nbsp;обучения</a>
-              </li>
-              <li class="nav__item">
-                <a href="/" class="nav__link header__logo"></a>
-              </li>
-              <li class="nav__item">
-                <a href="#quetions" class="nav__link">Задать&nbsp;вопрос</a>
-              </li>
-              <li class="nav__item">
-                <a href="#gifts" class="nav__link">Подарки</a>
-              </li>
-            </ul>
-          </nav>
-          <a href="#" class="header__logo header__logo_1024"></a>
-        </header>
-        <div class="hero__date-wrap">
-          <p class="hero__time">
-            Длительность обучения
-            <span class="hero__time-span">1-2 месяца</span>
-          </p>
-          <p class="hero__time">
-            Старт обучения <span class="hero__time-span">11 августа</span>
-          </p>
-        </div>
-        <h1 class="hero__title">
-          Marketplace<span class="hero__title-span">Academica</span>
-        </h1>
-        <div class="hero__content-wrap">
-          <div class="team">
-            Возможность попасть в&nbsp;команду бренда
-            <span class="team__span">Letique Cosmetics</span>
-          </div>
-          <div class="employment">
-            Рекомендации и&nbsp;помощь в&nbsp;трудоустройстве
-            <span class="employment__span">от&nbsp;Паши Шевченко</span>
-          </div>
-          <img src="./assets/img/heroes.png" alt="" height="633" width="1000" class="hero__img" />
-          <div class="img-1024__wrap">
-            <img src="./assets/img/heroes_501.png" alt="" height="375" width="500" class="hero__img_1024" />
-          </div>
-          <a href="https://www.instagram.com/artem_chek/" class="hero__instagrm hero__instagrm_artem"
-            target="blank"><img src="./assets/svg/instagram.svg" alt="" width="30" />
-            artem_chek</a>
-          <a href="https://www.instagram.com/ler_chek/" class="hero__instagrm hero__instagrm_ler" target="blank">
-            <img src="./assets/svg/instagram.svg" alt="" width="30" />ler_chek</a>
-          <a href="https://www.instagram.com/pavel_shauchenka/" class="hero__instagrm hero__instagrm_pavel"
-            target="blank"><img src="./assets/svg/instagram.svg" alt="" width="30" />pavel_shauchenka</a>
-          <div class="hero__offer">
-            <p class="hero__offer-text">
-              Освой самую востребованную профессию 2022 года за 1-2 месяца с
-              нами
-            </p>
-            <a href="#price" class="hero__offer-btn"><span class="hero__btn-span"></span><span
-                class="hero__btn-text">выбрать&nbsp;профессию</span></a>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/svg/main-bottom.svg" alt="" class="hero__separator" />
-    </section>
-    <section class="numbers" id="numbers">
-      <div class="container numbers__container">
-        <h2 class="numbers__title">Профессия в&nbsp;цифрах!</h2>
-        <div class="numbers__content">
-          <div class="number">
-            <span class="number__amout">20.000</span>
-            <span class="number__units">компаний</span>
-            <span class="number__description">которые ищут специалиста по маркетплейсам</span>
-          </div>
-          <div class="number">
-            <span class="number__amout">50.000<span class="little">₽</span></span>
-            <span class="number__units">зарплата</span>
-            <span class="number__description">специалиста по маркетплейсам за один проект</span>
-          </div>
-          <div class="number">
-            <span class="number__amout">1.000</span>
-            <span class="number__units">продавцов</span>
-            <span class="number__description">клуба Паши Шевченко ищут сотрудника из числа наших
-              учеников</span>
-          </div>
-          <div class="number">
-            <span class="number__amout">2-3</span>
-            <span class="number__units">проекта</span>
-            <span class="number__description">одновременно может вести один менеджер</span>
-          </div>
-          <div class="number">
-            <span class="number__amout">60</span>
-            <span class="number__units">дней</span>
-            <span class="number__description">необходимо для освоения профессии</span>
-          </div>
-          <div class="number">
-            <span class="number__amout">0</span>
-            <span class="number__units">знаний</span>
-            <span class="number__description">о маркетплейсах нужно для старта обучения</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="prof" id="prof">
-      <div class="container prof__container">
-        <h2 class="prof__title">Какую профессию ты&nbsp;сможешь получить?</h2>
-        <div class="prof__content-wrap">
-          <div class="profession assistant">
-            <img src="./assets/img/assist__img.png" alt="" class="profession__img" />
-            <div class="profession__content">
-              <div class="profession__title">
-                Ассистент +<br />аккаунт-менеджер<br />Wildberries
-              </div>
-              <ul class="profession__list">
-                <li>
-                  Занимается созданием карточек: описание, публикация фото и
-                  видео-контента
+  <body>
+    <main class="main">
+      <section class="hero" id="hero">
+        <div class="container hero__container">
+          <header class="header">
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#prof" class="nav__link">Профессии</a>
                 </li>
-                <li>Анализирует и мониторит акции и цены на площадке</li>
-                <li>Настраивает и анализирует рекламные кампании</li>
-                <li>Умеет работать с контентом</li>
-                <li>Формирует поставки на маркетплейсе</li>
-                <li>Анализирует продажи продукта</li>
-                <li>Разрабатывает стратегии продвижения и развития</li>
-              </ul>
-              <!-- <a href="./pages/assistant-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
-              <a href="./pages/assistant-prog.html" class="profession__btn profession__btn_details">Ознакомиться с
-                программой</a>
-            </div>
-          </div>
-          <div class="profession reserch">
-            <img src="./assets/img/res__img.png" alt="" class="profession__img" />
-            <div class="profession__content">
-              <div class="profession__title">
-                Research manager +<br />Специалист отдела<br />закупок
-              </div>
-              <ul class="profession__list">
-                <li>Анализирует ниши и категории</li>
-                <li>Изучает целевую аудиторию и конкурентов</li>
-                <li>Выбирает поставщиков продукта</li>
-                <li>Занимается разработкой товара, заказывает образцы</li>
-                <li>Знает все о сертификации продукта</li>
-                <li>Выстраивает систему логистики</li>
-                <li>Управляет остатками товара</li>
-              </ul>
-              <!-- <a href="./pages/research-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
-              <a href="./pages/research-prog.html" class="profession__btn profession__btn_details">Ознакомиться с
-                программой</a>
-            </div>
-          </div>
-          <div class="profession project">
-            <img src="./assets/img/proj__img.png" alt="" class="profession__img" />
-            <div class="profession__content">
-              <div class="profession__title">
-                Project manager/<br />Управляющий<br />проектом
-              </div>
-              <ul class="profession__list">
-                <li>Работает с отчетами и аналитическими инструментами</li>
-                <li>Формирует цены на продукт</li>
-                <li>
-                  Выстраивает структуру и систему функционирования команды
+                <li class="nav__item">
+                  <a href="#price" class="nav__link">Стоимость&nbsp;обучения</a>
                 </li>
-                <li>Автоматизирует бизнес-процессы</li>
-                <li>Контролирует задачи и найм сотрудников</li>
-                <li>Составляет ТЗ дизайнеру</li>
-                <li>Работает над построением бренда на маркетплейсе</li>
+                <li class="nav__item">
+                  <a href="/" class="nav__link header__logo"></a>
+                </li>
+                <li class="nav__item">
+                  <a href="#quetions" class="nav__link">Задать&nbsp;вопрос</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#gifts" class="nav__link">Подарки</a>
+                </li>
               </ul>
-              <!-- <a href="./pages/project-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
-              <a href="./pages/project-prog.html" class="profession__btn profession__btn_details">Ознакомиться с
-                программой</a>
+            </nav>
+            <a href="#" class="header__logo header__logo_1024"></a>
+          </header>
+          <div class="hero__date-wrap">
+            <p class="hero__time">
+              Длительность обучения
+              <span class="hero__time-span">1-2 месяца</span>
+            </p>
+            <p class="hero__time">
+              Старт обучения <span class="hero__time-span">11 августа</span>
+            </p>
+          </div>
+          <h1 class="hero__title">
+            Marketplace<span class="hero__title-span">Academica</span>
+          </h1>
+          <div class="hero__content-wrap">
+            <div class="team">
+              Возможность попасть в&nbsp;команду бренда
+              <span class="team__span">Letique Cosmetics</span>
+            </div>
+            <div class="employment">
+              Рекомендации и&nbsp;помощь в&nbsp;трудоустройстве
+              <span class="employment__span">от&nbsp;Паши Шевченко</span>
+            </div>
+            <img
+              src="./assets/img/heroes.png"
+              alt=""
+              height="633"
+              width="1000"
+              class="hero__img"
+            />
+            <div class="img-1024__wrap">
+              <img
+                src="./assets/img/heroes_501.png"
+                alt=""
+                height="375"
+                width="500"
+                class="hero__img_1024"
+              />
+            </div>
+            <a
+              href="https://www.instagram.com/artem_chek/"
+              class="hero__instagrm hero__instagrm_artem"
+              target="blank"
+              ><img src="./assets/svg/instagram.svg" alt="" width="30" />
+              artem_chek</a
+            >
+            <a
+              href="https://www.instagram.com/ler_chek/"
+              class="hero__instagrm hero__instagrm_ler"
+              target="blank"
+            >
+              <img
+                src="./assets/svg/instagram.svg"
+                alt=""
+                width="30"
+              />ler_chek</a
+            >
+            <a
+              href="https://www.instagram.com/pavel_shauchenka/"
+              class="hero__instagrm hero__instagrm_pavel"
+              target="blank"
+              ><img
+                src="./assets/svg/instagram.svg"
+                alt=""
+                width="30"
+              />pavel_shauchenka</a
+            >
+            <div class="hero__offer">
+              <p class="hero__offer-text">
+                Освой самую востребованную профессию 2022 года за 1-2 месяца с
+                нами
+              </p>
+              <a href="#price" class="hero__offer-btn"
+                ><span class="hero__btn-span"></span
+                ><span class="hero__btn-text">выбрать&nbsp;профессию</span></a
+              >
             </div>
           </div>
         </div>
-        <div class="prof__timer timer">
-          <h4 class="timer__title">До конца скидок:</h4>
-          <div class="timer__content">
-            <span class="days">10</span>
-            <span class="timer__sep">:</span>
-            <span class="hours">13</span>
-            <span class="timer__sep">:</span>
-            <span class="minutes">23</span>
-            <span class="timer__sep">:</span>
-            <span class="seconds">42</span>
-            <span class="timer__descr timer__descr_1">дней</span>
-            <span class="timer__descr timer__descr_2">часов</span>
-            <span class="timer__descr timer__descr_3">минут</span>
-            <span class="timer__descr timer__descr_4">секунд</span>
+        <img
+          src="./assets/svg/main-bottom.svg"
+          alt=""
+          class="hero__separator"
+        />
+      </section>
+      <section class="numbers" id="numbers">
+        <div class="container numbers__container">
+          <h2 class="numbers__title">Профессия в&nbsp;цифрах!</h2>
+          <div class="numbers__content">
+            <div class="number">
+              <span class="number__amout">20.000</span>
+              <span class="number__units">компаний</span>
+              <span class="number__description"
+                >которые ищут специалиста по маркетплейсам</span
+              >
+            </div>
+            <div class="number">
+              <span class="number__amout"
+                >50.000<span class="little">₽</span></span
+              >
+              <span class="number__units">зарплата</span>
+              <span class="number__description"
+                >специалиста по маркетплейсам за один проект</span
+              >
+            </div>
+            <div class="number">
+              <span class="number__amout">1.000</span>
+              <span class="number__units">продавцов</span>
+              <span class="number__description"
+                >клуба Паши Шевченко ищут сотрудника из числа наших
+                учеников</span
+              >
+            </div>
+            <div class="number">
+              <span class="number__amout">2-3</span>
+              <span class="number__units">проекта</span>
+              <span class="number__description"
+                >одновременно может вести один менеджер</span
+              >
+            </div>
+            <div class="number">
+              <span class="number__amout">60</span>
+              <span class="number__units">дней</span>
+              <span class="number__description"
+                >необходимо для освоения профессии</span
+              >
+            </div>
+            <div class="number">
+              <span class="number__amout">0</span>
+              <span class="number__units">знаний</span>
+              <span class="number__description"
+                >о маркетплейсах нужно для старта обучения</span
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="teach" id="teach">
-      <div class="container teach__container">
-        <h2 class="teach__title">Как проходит обучение?</h2>
-        <div class="teach__content">
-          <div class="teach-item teach-item__1">
-            <div class="teach-item__top">
-              <span class="teach-item__number">01</span>
-              <img src="./assets/img/teach-01.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">
-                Доступ к материалам на онлайн-платформе
-              </h4>
+      </section>
+      <section class="prof" id="prof">
+        <div class="container prof__container">
+          <h2 class="prof__title">Какую профессию ты&nbsp;сможешь получить?</h2>
+          <div class="prof__content-wrap">
+            <div class="profession assistant">
+              <img
+                src="./assets/img/assist__img.png"
+                alt=""
+                class="profession__img"
+              />
+              <div class="profession__content">
+                <div class="profession__title">
+                  Ассистент +<br />аккаунт-менеджер<br />Wildberries
+                </div>
+                <ul class="profession__list">
+                  <li>
+                    Занимается созданием карточек: описание, публикация фото и
+                    видео-контента
+                  </li>
+                  <li>Анализирует и мониторит акции и цены на площадке</li>
+                  <li>Настраивает и анализирует рекламные кампании</li>
+                  <li>Умеет работать с контентом</li>
+                  <li>Формирует поставки на маркетплейсе</li>
+                  <li>Анализирует продажи продукта</li>
+                  <li>Разрабатывает стратегии продвижения и развития</li>
+                </ul>
+                <!-- <a href="./pages/assistant-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
+                <a
+                  href="./pages/assistant-prog.html"
+                  class="profession__btn profession__btn_details"
+                  >Ознакомиться с программой</a
+                >
+              </div>
             </div>
-            <p class="teach-item__descrpiption">
-              Можно посмотреть в любое удобное время!
-            </p>
+            <div class="profession reserch">
+              <img
+                src="./assets/img/res__img.png"
+                alt=""
+                class="profession__img"
+              />
+              <div class="profession__content">
+                <div class="profession__title">
+                  Research manager +<br />Специалист отдела<br />закупок
+                </div>
+                <ul class="profession__list">
+                  <li>Анализирует ниши и категории</li>
+                  <li>Изучает целевую аудиторию и конкурентов</li>
+                  <li>Выбирает поставщиков продукта</li>
+                  <li>Занимается разработкой товара, заказывает образцы</li>
+                  <li>Знает все о сертификации продукта</li>
+                  <li>Выстраивает систему логистики</li>
+                  <li>Управляет остатками товара</li>
+                </ul>
+                <!-- <a href="./pages/research-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
+                <a
+                  href="./pages/research-prog.html"
+                  class="profession__btn profession__btn_details"
+                  >Ознакомиться с программой</a
+                >
+              </div>
+            </div>
+            <div class="profession project">
+              <img
+                src="./assets/img/proj__img.png"
+                alt=""
+                class="profession__img"
+              />
+              <div class="profession__content">
+                <div class="profession__title">
+                  Project manager/<br />Управляющий<br />проектом
+                </div>
+                <ul class="profession__list">
+                  <li>Работает с отчетами и аналитическими инструментами</li>
+                  <li>Формирует цены на продукт</li>
+                  <li>
+                    Выстраивает структуру и систему функционирования команды
+                  </li>
+                  <li>Автоматизирует бизнес-процессы</li>
+                  <li>Контролирует задачи и найм сотрудников</li>
+                  <li>Составляет ТЗ дизайнеру</li>
+                  <li>Работает над построением бренда на маркетплейсе</li>
+                </ul>
+                <!-- <a href="./pages/project-prog.html" class="profession__btn profession__btn_sale"><span class="profession__btn-span"></span><span class="profession__btn-text">Купить со скидкой</span></a> -->
+                <a
+                  href="./pages/project-prog.html"
+                  class="profession__btn profession__btn_details"
+                  >Ознакомиться с программой</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="teach-item teach-item__2">
-            <div class="teach-item__top">
-              <span class="teach-item__number">02</span>
-              <img src="./assets/img/teach-02.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">
-                Чат для общения<br />и обмена опытом
-              </h4>
+          <div class="prof__timer timer">
+            <h4 class="timer__title">До конца скидок:</h4>
+            <div class="timer__content">
+              <span class="days">10</span>
+              <span class="timer__sep">:</span>
+              <span class="hours">13</span>
+              <span class="timer__sep">:</span>
+              <span class="minutes">23</span>
+              <span class="timer__sep">:</span>
+              <span class="seconds">42</span>
+              <span class="timer__descr timer__descr_1">дней</span>
+              <span class="timer__descr timer__descr_2">часов</span>
+              <span class="timer__descr timer__descr_3">минут</span>
+              <span class="timer__descr timer__descr_4">секунд</span>
             </div>
-            <p class="teach-item__descrpiption">
-              Для каждой профессии создан чат для свободного взаимодействия
-              учеников
-            </p>
-          </div>
-          <div class="teach-item teach-item__3">
-            <div class="teach-item__top">
-              <span class="teach-item__number">03</span>
-              <img src="./assets/img/teach-03.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">
-                Практические задания, чек-листы и гайды
-              </h4>
-            </div>
-            <p class="teach-item__descrpiption">
-              Дополнительные материалы останутся с вами навсегда
-            </p>
-          </div>
-          <div class="teach-item teach-item__4">
-            <div class="teach-item__top">
-              <span class="teach-item__number">04</span>
-              <img src="./assets/img/teach-04.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">
-                Сертификат<br />о прохождении обучения
-              </h4>
-            </div>
-            <p class="teach-item__descrpiption">
-              Сертификат в формате резюме, который ты сможешь отправить
-              работодателю
-            </p>
-          </div>
-          <div class="teach-item teach-item__5">
-            <div class="teach-item__top">
-              <span class="teach-item__number">05</span>
-              <img src="./assets/img/teach-05.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">Трудоустройство</h4>
-            </div>
-            <p class="teach-item__descrpiption">
-              Доступ к специализированному боту для поиска работы
-            </p>
-          </div>
-          <div class="teach-item teach-item__6">
-            <div class="teach-item__top">
-              <span class="teach-item__number">06</span>
-              <img src="./assets/img/teach-06.png" alt="" class="teach-item__img" width="50" />
-              <h4 class="teach-item__title">
-                Розыгрыш подарков<br />и трудоустройства
-              </h4>
-            </div>
-            <p class="teach-item__descrpiption">
-              10 лучшим студентам будет предложена работа в команде Letique и
-              команде Паши Шевченко
-            </p>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="gifts" id="gifts">
-      <div class="container gifts__container">
-        <h2 class="gifts__title">Подарки для лучших учеников курса</h2>
-        <div class="gifts__content">
-          <div class="gift">
-            <div class="gift__img-wrap">
-              <img src="./assets/img/gift-01.png" alt="" class="gift__img" width="360" />
+      </section>
+      <section class="teach" id="teach">
+        <div class="container teach__container">
+          <h2 class="teach__title">Как проходит обучение?</h2>
+          <div class="teach__content">
+            <div class="teach-item teach-item__1">
+              <div class="teach-item__top">
+                <span class="teach-item__number">01</span>
+                <img
+                  src="./assets/img/teach-01.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">
+                  Доступ к материалам на онлайн-платформе
+                </h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                Можно посмотреть в любое удобное время!
+              </p>
             </div>
-            <h5 class="gift__title">10 лучших учеников</h5>
-            <p class="gift__description">
-              смогут попасть в команду <span>Letique</span> и команду Паши
-              Шевченко
-            </p>
-          </div>
-          <div class="gift">
-            <div class="gift__img-wrap">
-              <img src="./assets/img/gift-02.png" alt="" class="gift__img" width="360" />
+            <div class="teach-item teach-item__2">
+              <div class="teach-item__top">
+                <span class="teach-item__number">02</span>
+                <img
+                  src="./assets/img/teach-02.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">
+                  Чат для общения<br />и обмена опытом
+                </h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                Для каждой профессии создан чат для свободного взаимодействия
+                учеников
+              </p>
             </div>
-            <h5 class="gift__title">10 ноутбуков Apple MacBook</h5>
-            <p class="gift__description">
-              подарим лучшим ученикам курса и&nbsp;участникам бота
-            </p>
+            <div class="teach-item teach-item__3">
+              <div class="teach-item__top">
+                <span class="teach-item__number">03</span>
+                <img
+                  src="./assets/img/teach-03.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">
+                  Практические задания, чек-листы и гайды
+                </h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                Дополнительные материалы останутся с вами навсегда
+              </p>
+            </div>
+            <div class="teach-item teach-item__4">
+              <div class="teach-item__top">
+                <span class="teach-item__number">04</span>
+                <img
+                  src="./assets/img/teach-04.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">
+                  Сертификат<br />о прохождении обучения
+                </h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                Сертификат в формате резюме, который ты сможешь отправить
+                работодателю
+              </p>
+            </div>
+            <div class="teach-item teach-item__5">
+              <div class="teach-item__top">
+                <span class="teach-item__number">05</span>
+                <img
+                  src="./assets/img/teach-05.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">Трудоустройство</h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                Доступ к специализированному боту для поиска работы
+              </p>
+            </div>
+            <div class="teach-item teach-item__6">
+              <div class="teach-item__top">
+                <span class="teach-item__number">06</span>
+                <img
+                  src="./assets/img/teach-06.png"
+                  alt=""
+                  class="teach-item__img"
+                  width="50"
+                />
+                <h4 class="teach-item__title">
+                  Розыгрыш подарков<br />и трудоустройства
+                </h4>
+              </div>
+              <p class="teach-item__descrpiption">
+                10 лучшим студентам будет предложена работа в команде Letique и
+                команде Паши Шевченко
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="price" id="price">
-      <div class="container price__container">
-        <h2 class="price__title">Стоимость обучения</h2>
-        <div class="price__wrap">
-          <div class="rate rate_assistant">
-            <div class="rate__icon rate__icon_assistant"></div>
-            <h3 class="rate__title">
-              Ассистент + аккаунт-менеджер Wildberries
+      </section>
+      <section class="gifts" id="gifts">
+        <div class="container gifts__container">
+          <h2 class="gifts__title">Подарки для лучших учеников курса</h2>
+          <div class="gifts__content">
+            <div class="gift">
+              <div class="gift__img-wrap">
+                <img
+                  src="./assets/img/gift-01.png"
+                  alt=""
+                  class="gift__img"
+                  width="360"
+                />
+              </div>
+              <h5 class="gift__title">10 лучших учеников</h5>
+              <p class="gift__description">
+                смогут попасть в команду <span>Letique</span> и команду Паши
+                Шевченко
+              </p>
+            </div>
+            <div class="gift">
+              <div class="gift__img-wrap">
+                <img
+                  src="./assets/img/gift-02.png"
+                  alt=""
+                  class="gift__img"
+                  width="360"
+                />
+              </div>
+              <h5 class="gift__title">10 ноутбуков Apple MacBook</h5>
+              <p class="gift__description">
+                подарим лучшим ученикам курса и&nbsp;участникам бота
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="price" id="price">
+        <div class="container price__container">
+          <h2 class="price__title">Стоимость обучения</h2>
+          <div class="price__wrap">
+            <div class="rate rate_assistant">
+              <div class="rate__icon rate__icon_assistant"></div>
+              <h3 class="rate__title">
+                Ассистент + аккаунт-менеджер Wildberries
+              </h3>
+              <div class="rate__salary rate__salary_assistant">
+                ЗП на рынке: <span>от 45 000 руб</span>
+              </div>
+              <ul class="rate__list rate__list_assistant">
+                <li>
+                  5 обучающих модулей:
+                  <ul class="rate__sublist">
+                    <li class="rate__sublist-item">
+                      Психологическая настройка
+                    </li>
+                    <li class="rate__sublist-item">Введение в Курс</li>
+                    <li class="rate__sublist-item">Старт на маркетплейсе</li>
+                    <li class="rate__sublist-item">
+                      Профессия “Ассистент/аккаунт менеджер Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Как оперативно найти новых клиентов?
+                    </li>
+                  </ul>
+                </li>
+                <li>54 урока</li>
+                <li>Дополнительные материалы</li>
+                <li>Доступ к урокам на платформе 2 месяца</li>
+                <li>Чат обучения для обмена опытом между учениками</li>
+              </ul>
+              <p class="rate__price">18 000₽</p>
+              <p class="rate__price-description">в рассрочку от 1834 ₽/мес</p>
+              <button
+                class="rate__offer-btn rate__offer-btn_assistant"
+                data-id="3544961"
+                data-price="18000"
+                data-part6="20000"
+                data-part10="21000"
+                data-part12="22000"
+                data-title="Ассистент + аккаунт-менеджер Wildberries"
+                data-salary="45 000"
+              >
+                <span class="rate__btn-span"></span
+                ><span class="rate__btn-text">Купить со скидкой</span>
+              </button>
+              <a href="./pages/assistant-prog.html" class="rate__program-link"
+                >ПОСМОТРЕТЬ ПРОГРАММУ</a
+              >
+            </div>
+            <div class="rate rate_research">
+              <div class="rate__icon rate__icon_research"></div>
+              <h3 class="rate__title">
+                Research manager + Специалист отдела закупок
+              </h3>
+              <div class="rate__salary rate__salary_research">
+                ЗП на рынке: <span>от 75 000 руб</span>
+              </div>
+              <p class="rate__descr">
+                При покупке профессии «Research manager + Специалист отдела
+                закупок» вы дополнительно получаете доступ к профессии
+                «Ассистент/аккаунт-менеджер Wildberries»!
+              </p>
+              <ul class="rate__list rate__list_research">
+                <li>
+                  6 обучающих модулей:
+                  <ul class="rate__sublist">
+                    <li class="rate__sublist-item">
+                      Психологическая настройка
+                    </li>
+                    <li class="rate__sublist-item">Введение в Курс</li>
+                    <li class="rate__sublist-item">Старт на маркетплейсе</li>
+                    <li class="rate__sublist-item">
+                      Профессия “Research manager + Специалист отдела закупок
+                      Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Профессия “Ассистент/аккаунт менеджер Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Как оперативно найти новых клиентов?
+                    </li>
+                  </ul>
+                </li>
+                <li>77 уроков</li>
+                <li>Дополнительные материалы</li>
+                <li>Доступ к урокам на платформе 4 месяца</li>
+                <li>Чат обучения для обмена опытом между учениками</li>
+              </ul>
+              <p class="rate__price">33 000₽</p>
+              <p class="rate__price-description">в рассрочку от 3267 ₽/мес</p>
+              <button
+                class="rate__offer-btn rate__offer-btn_research"
+                data-id="3544966"
+                data-price="33000"
+                data-part6="36600"
+                data-part10="38200"
+                data-part12="39200"
+                data-title="Research manager + Специалист отдела закупок"
+                data-salary="75 000"
+              >
+                <span class="rate__btn-span"></span
+                ><span class="rate__btn-text">Купить со скидкой</span>
+              </button>
+              <a href="./pages/research-prog.html" class="rate__program-link"
+                >ПОСМОТРЕТЬ ПРОГРАММУ</a
+              >
+            </div>
+            <div class="rate rate_project">
+              <div class="rate__icon rate__icon_project"></div>
+              <h3 class="rate__title">Project manager/Управляющий проектом</h3>
+              <div class="rate__salary rate__salary_project">
+                ЗП на рынке: <span>от 90 000 руб</span>
+              </div>
+              <p class="rate__descr">
+                При покупке профессии «Project manager/ управляющий проектом» вы
+                дополнительно получаете доступ к профессии
+                «Ассистент/аккаунт-менеджер Wildberries» и «Research manager +
+                Специалист отдела закупок»!
+              </p>
+              <ul class="rate__list rate__list_project">
+                <li>
+                  7 обучающих модулей:
+                  <ul class="rate__sublist">
+                    <li class="rate__sublist-item">
+                      Психологическая настройка
+                    </li>
+                    <li class="rate__sublist-item">Введение в обучение</li>
+                    <li class="rate__sublist-item">Старт на маркетплейсе</li>
+                    <li class="rate__sublist-item">
+                      Профессия “Project manager Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Профессия “Research manager + Специалист отдела закупок
+                      Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Профессия “Ассистент/аккаунт менеджер Wildberries”
+                    </li>
+                    <li class="rate__sublist-item">
+                      Как оперативно найти новых клиентов?
+                    </li>
+                  </ul>
+                </li>
+                <li>91 урок</li>
+                <li>Дополнительные материалы</li>
+                <li>Доступ к урокам на платформе 4 месяца</li>
+                <li>Чат обучения для обмена опытом между учениками</li>
+              </ul>
+              <p class="rate__price">48 000₽</p>
+              <p class="rate__price-description">в рассрочку от 4742 ₽/мес</p>
+              <button
+                class="rate__offer-btn rate__offer-btn_project"
+                data-id="3544972"
+                data-price="48000"
+                data-part6="53250"
+                data-part10="55800"
+                data-part12="56900"
+                data-title="Project manager / Управляющий проектом"
+                data-salary="90 000"
+              >
+                <span class="rate__btn-span"></span
+                ><span class="rate__btn-text">Купить со скидкой</span>
+              </button>
+              <a href="./pages/project-prog.html" class="rate__program-link"
+                >ПОСМОТРЕТЬ ПРОГРАММУ</a
+              >
+            </div>
+          </div>
+          <h2 class="price__title">Сертификат о прохождении обучения</h2>
+          <h4 class="price__subtitle">
+            Каждый ученик после окончания курса получит сертификат,
+            <span>подтверждающий полученные профессиональные навыки</span>
+          </h4>
+          <div class="price__img-wrap">
+            <img src="./assets/img/sertificat.png" alt="" class="price__img" />
+          </div>
+        </div>
+        <img
+          src="./assets/svg/price__bottom.svg"
+          alt=""
+          class="price__separator"
+        />
+      </section>
+      <section class="authors">
+        <div class="container authors__container">
+          <h2 class="authors__title">Авторы обучения:</h2>
+          <div class="author">
+            <div class="author__img-wrap">
+              <img src="./assets/img/pavel.png" alt="" class="author__img" />
+              <a
+                href="https://www.instagram.com/pavel_shauchenka/"
+                class="author__instagram author__instagram_pavel"
+                target="blank"
+                ><img
+                  src="./assets/svg/instagram.svg"
+                  alt=""
+                  width="22"
+                />pavel_shauchenka</a
+              >
+            </div>
+            <div class="author__content">
+              <h4 class="author__title">Павел Шевченко</h4>
+              <ul class="author__list">
+                <li>
+                  “Селлер года-2021” по версии Всероссийского клуба MPsellers
+                </li>
+                <li>
+                  Принимал участие в создании брендов: Rabby, Seauty, PWR
+                  Ultimate Power
+                </li>
+                <li>Оборот на маркетплейсах более 2,5 млн $ в месяц</li>
+                <li>
+                  Автор курсов “Тотальное доминирование на маркетплейсах” и
+                  “ТДМ:Новые реалии”
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="author">
+            <div class="author__img-wrap">
+              <img
+                src="./assets/img/artem-ler.png"
+                alt=""
+                class="author__img"
+              />
+              <a
+                href="https://www.instagram.com/artem_chek/"
+                class="author__instagram author__instagram_artem"
+                ><img
+                  src="./assets/svg/instagram.svg"
+                  alt=""
+                  width="22"
+                  target="blank"
+                />artem_chek</a
+              >
+              <a
+                href="https://www.instagram.com/ler_chek/"
+                class="author__instagram author__instagram_ler"
+                ><img
+                  src="./assets/svg/instagram.svg"
+                  alt=""
+                  width="22"
+                  target="blank"
+                />ler_chek</a
+              >
+            </div>
+            <div class="author__content">
+              <h4 class="author__title">Артем и Валерия Чекалины</h4>
+              <ul class="author__list">
+                <li>Основатели бренда Letique cosmetics</li>
+                <li>Оборот Letique cosmetics 3,4 млрд рублей в год</li>
+                <li>
+                  Оборот Letique cosmetics на Wildberries 22 млн рублей в месяц
+                </li>
+                <li>Блогеры-миллионники</li>
+              </ul>
+            </div>
+          </div>
+          <div class="author">
+            <div class="author__img-wrap">
+              <img src="./assets/img/max.png" alt="" class="author__img" />
+            </div>
+            <div class="author__content">
+              <h4 class="author__title">Артем Максименко</h4>
+              <ul class="author__list">
+                <li>
+                  Управляющий бренда Rabby. Участвовал в создании брендов
+                  Seauty, PWR Ultimate Power
+                </li>
+                <li>Эксперт в области продвижения товаров на маркетплейсах</li>
+                <li>
+                  Соавтор курса “Тотальное доминирование на маркетплейсах: Новые
+                  реалии”
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="speakers">
+        <div class="container speakers__container">
+          <h2 class="speakers__title">Спикеры обучения:</h2>
+          <div class="speakers__wrap">
+            <div class="speaker">
+              <div class="speaker__img-wrap">
+                <img
+                  src="./assets/img/olga.png"
+                  alt=""
+                  class="speaker__img"
+                  width="290"
+                />
+              </div>
+              <h3 class="speaker__title">Ольга Барсукова</h3>
+              <ul class="speaker__list">
+                <li>Ведущий аналитик сервиса MPSTATS</li>
+                <li>
+                  Специалист направления "Обучения студентов партнерских школ"
+                </li>
+                <li>С 2015 года в e-commerce</li>
+              </ul>
+            </div>
+            <div class="speaker">
+              <div class="speaker__img-wrap">
+                <img
+                  src="./assets/img/mihail.png"
+                  alt=""
+                  class="speaker__img"
+                  width="290"
+                />
+              </div>
+              <h3 class="speaker__title">Михаил Касаткин</h3>
+              <ul class="speaker__list">
+                <li>Социальный психолог, бизнес-коуч</li>
+                <li>Основатель книжного бизнес-клуба “Императив”</li>
+                <li>Эксперт по личной эффективности</li>
+              </ul>
+            </div>
+            <div class="speaker">
+              <div class="speaker__img-wrap">
+                <img
+                  src="./assets/img/oksana.png"
+                  alt=""
+                  class="speaker__img"
+                  width="290"
+                />
+              </div>
+              <h3 class="speaker__title">Оксана Ворона</h3>
+              <ul class="speaker__list">
+                <li>Специалист в области закупок</li>
+                <li>15-летний опыт работы с Китаем</li>
+                <li>Свободное владение китайским языком</li>
+                <li>С 2018 года в e-commerce</li>
+              </ul>
+            </div>
+            <div class="speaker">
+              <div class="speaker__img-wrap">
+                <img
+                  src="./assets/img/anastasia.png"
+                  alt=""
+                  class="speaker__img"
+                  width="290"
+                />
+              </div>
+              <h3 class="speaker__title">Анастасия Яшковская</h3>
+              <ul class="speaker__list">
+                <li>
+                  Специалист в области разрешительной документации и
+                  сертификации
+                </li>
+                <li>6-летний опыт в работе с брендом и Честным знаком</li>
+              </ul>
+            </div>
+            <div class="speaker">
+              <div class="speaker__img-wrap">
+                <img
+                  src="./assets/img/kostantin.png"
+                  alt=""
+                  class="speaker__img"
+                  width="290"
+                />
+              </div>
+              <h3 class="speaker__title">Константин Никулин</h3>
+              <ul class="speaker__list">
+                <li>Коммерческий директор MPBoost</li>
+                <li>15 лет в продажах</li>
+                <li>10 лет в управлении продаж (200+ сотрудников)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="questions" id="quetions">
+        <div class="container questions__container">
+          <h2 class="questions__title">Остались вопросы?</h2>
+          <form action="/" class="quetions__form form" method="post">
+            <h3 class="form__title">
+              <span>Остались вопросы?</span>Заполните форму:
             </h3>
-            <div class="rate__salary rate__salary_assistant">
-              ЗП на рынке: <span>от 45 000 руб</span>
-            </div>
-            <ul class="rate__list rate__list_assistant">
-              <li>
-                5 обучающих модулей:
-                <ul class="rate__sublist">
-                  <li class="rate__sublist-item">
-                    Психологическая настройка
-                  </li>
-                  <li class="rate__sublist-item">Введение в Курс</li>
-                  <li class="rate__sublist-item">Старт на маркетплейсе</li>
-                  <li class="rate__sublist-item">
-                    Профессия “Ассистент/аккаунт менеджер Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Как оперативно найти новых клиентов?
-                  </li>
-                </ul>
-              </li>
-              <li>54 урока</li>
-              <li>Дополнительные материалы</li>
-              <li>Доступ к урокам на платформе 2 месяца</li>
-              <li>Чат обучения для обмена опытом между учениками</li>
-            </ul>
-            <p class="rate__price">18 000₽</p>
-            <p class="rate__price-description">в рассрочку от 1834 ₽/мес</p>
-            <button class="rate__offer-btn rate__offer-btn_assistant" data-id="3544961" data-price="18000"
-              data-part6="20000" data-part10="21000" data-part12="22000"
-              data-title="Ассистент + аккаунт-менеджер Wildberries" data-salary="45 000">
-              <span class="rate__btn-span"></span><span class="rate__btn-text">Купить со скидкой</span>
-            </button>
-            <a href="./pages/assistant-prog.html" class="rate__program-link">ПОСМОТРЕТЬ ПРОГРАММУ</a>
-          </div>
-          <div class="rate rate_research">
-            <div class="rate__icon rate__icon_research"></div>
-            <h3 class="rate__title">
-              Research manager + Специалист отдела закупок
-            </h3>
-            <div class="rate__salary rate__salary_research">
-              ЗП на рынке: <span>от 75 000 руб</span>
-            </div>
-            <p class="rate__descr">
-              При покупке профессии «Research manager + Специалист отдела
-              закупок» вы дополнительно получаете доступ к профессии
-              «Ассистент/аккаунт-менеджер Wildberries»!
-            </p>
-            <ul class="rate__list rate__list_research">
-              <li>
-                6 обучающих модулей:
-                <ul class="rate__sublist">
-                  <li class="rate__sublist-item">
-                    Психологическая настройка
-                  </li>
-                  <li class="rate__sublist-item">Введение в Курс</li>
-                  <li class="rate__sublist-item">Старт на маркетплейсе</li>
-                  <li class="rate__sublist-item">
-                    Профессия “Research manager + Специалист отдела закупок
-                    Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Профессия “Ассистент/аккаунт менеджер Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Как оперативно найти новых клиентов?
-                  </li>
-                </ul>
-              </li>
-              <li>77 уроков</li>
-              <li>Дополнительные материалы</li>
-              <li>Доступ к урокам на платформе 4 месяца</li>
-              <li>Чат обучения для обмена опытом между учениками</li>
-            </ul>
-            <p class="rate__price">33 000₽</p>
-            <p class="rate__price-description">в рассрочку от 3267 ₽/мес</p>
-            <button class="rate__offer-btn rate__offer-btn_research" data-id="3544966" data-price="33000"
-              data-part6="36600" data-part10="38200" data-part12="39200"
-              data-title="Research manager + Специалист отдела закупок" data-salary="75 000">
-              <span class="rate__btn-span"></span><span class="rate__btn-text">Купить со скидкой</span>
-            </button>
-            <a href="./pages/research-prog.html" class="rate__program-link">ПОСМОТРЕТЬ ПРОГРАММУ</a>
-          </div>
-          <div class="rate rate_project">
-            <div class="rate__icon rate__icon_project"></div>
-            <h3 class="rate__title">Project manager/Управляющий проектом</h3>
-            <div class="rate__salary rate__salary_project">
-              ЗП на рынке: <span>от 90 000 руб</span>
-            </div>
-            <p class="rate__descr">
-              При покупке профессии «Project manager/ управляющий проектом» вы
-              дополнительно получаете доступ к профессии
-              «Ассистент/аккаунт-менеджер Wildberries» и «Research manager +
-              Специалист отдела закупок»!
-            </p>
-            <ul class="rate__list rate__list_project">
-              <li>
-                7 обучающих модулей:
-                <ul class="rate__sublist">
-                  <li class="rate__sublist-item">
-                    Психологическая настройка
-                  </li>
-                  <li class="rate__sublist-item">Введение в обучение</li>
-                  <li class="rate__sublist-item">Старт на маркетплейсе</li>
-                  <li class="rate__sublist-item">
-                    Профессия “Project manager Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Профессия “Research manager + Специалист отдела закупок
-                    Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Профессия “Ассистент/аккаунт менеджер Wildberries”
-                  </li>
-                  <li class="rate__sublist-item">
-                    Как оперативно найти новых клиентов?
-                  </li>
-                </ul>
-              </li>
-              <li>91 урок</li>
-              <li>Дополнительные материалы</li>
-              <li>Доступ к урокам на платформе 4 месяца</li>
-              <li>Чат обучения для обмена опытом между учениками</li>
-            </ul>
-            <p class="rate__price">48 000₽</p>
-            <p class="rate__price-description">в рассрочку от 4742 ₽/мес</p>
-            <button class="rate__offer-btn rate__offer-btn_project" data-id="3544972" data-price="48000"
-              data-part6="53250" data-part10="55800" data-part12="56900"
-              data-title="Project manager / Управляющий проектом" data-salary="90 000">
-              <span class="rate__btn-span"></span><span class="rate__btn-text">Купить со скидкой</span>
-            </button>
-            <a href="./pages/project-prog.html" class="rate__program-link">ПОСМОТРЕТЬ ПРОГРАММУ</a>
-          </div>
-        </div>
-        <h2 class="price__title">Сертификат о прохождении обучения</h2>
-        <h4 class="price__subtitle">
-          Каждый ученик после окончания курса получит сертификат,
-          <span>подтверждающий полученные профессиональные навыки</span>
-        </h4>
-        <div class="price__img-wrap">
-          <img src="./assets/img/sertificat.png" alt="" class="price__img" />
-        </div>
-      </div>
-      <img src="./assets/svg/price__bottom.svg" alt="" class="price__separator" />
-    </section>
-    <section class="authors">
-      <div class="container authors__container">
-        <h2 class="authors__title">Авторы обучения:</h2>
-        <div class="author">
-          <div class="author__img-wrap">
-            <img src="./assets/img/pavel.png" alt="" class="author__img" />
-            <a href="https://www.instagram.com/pavel_shauchenka/" class="author__instagram author__instagram_pavel"
-              target="blank"><img src="./assets/svg/instagram.svg" alt="" width="22" />pavel_shauchenka</a>
-          </div>
-          <div class="author__content">
-            <h4 class="author__title">Павел Шевченко</h4>
-            <ul class="author__list">
-              <li>
-                “Селлер года-2021” по версии Всероссийского клуба MPsellers
-              </li>
-              <li>
-                Принимал участие в создании брендов: Rabby, Seauty, PWR
-                Ultimate Power
-              </li>
-              <li>Оборот на маркетплейсах более 2,5 млн $ в месяц</li>
-              <li>
-                Автор курсов “Тотальное доминирование на маркетплейсах” и
-                “ТДМ:Новые реалии”
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="author">
-          <div class="author__img-wrap">
-            <img src="./assets/img/artem-ler.png" alt="" class="author__img" />
-            <a href="https://www.instagram.com/artem_chek/" class="author__instagram author__instagram_artem"><img
-                src="./assets/svg/instagram.svg" alt="" width="22" target="blank" />artem_chek</a>
-            <a href="https://www.instagram.com/ler_chek/" class="author__instagram author__instagram_ler"><img
-                src="./assets/svg/instagram.svg" alt="" width="22" target="blank" />ler_chek</a>
-          </div>
-          <div class="author__content">
-            <h4 class="author__title">Артем и Валерия Чекалины</h4>
-            <ul class="author__list">
-              <li>Основатели бренда Letique cosmetics</li>
-              <li>Оборот Letique cosmetics 3,4 млрд рублей в год</li>
-              <li>
-                Оборот Letique cosmetics на Wildberries 22 млн рублей в месяц
-              </li>
-              <li>Блогеры-миллионники</li>
-            </ul>
-          </div>
-        </div>
-        <div class="author">
-          <div class="author__img-wrap">
-            <img src="./assets/img/max.png" alt="" class="author__img" />
-          </div>
-          <div class="author__content">
-            <h4 class="author__title">Артем Максименко</h4>
-            <ul class="author__list">
-              <li>
-                Управляющий бренда Rabby. Участвовал в создании брендов
-                Seauty, PWR Ultimate Power
-              </li>
-              <li>Эксперт в области продвижения товаров на маркетплейсах</li>
-              <li>
-                Соавтор курса “Тотальное доминирование на маркетплейсах: Новые
-                реалии”
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="speakers">
-      <div class="container speakers__container">
-        <h2 class="speakers__title">Спикеры обучения:</h2>
-        <div class="speakers__wrap">
-          <div class="speaker">
-            <div class="speaker__img-wrap">
-              <img src="./assets/img/olga.png" alt="" class="speaker__img" width="290" />
-            </div>
-            <h3 class="speaker__title">Ольга Барсукова</h3>
-            <ul class="speaker__list">
-              <li>Ведущий аналитик сервиса MPSTATS</li>
-              <li>
-                Специалист направления "Обучения студентов партнерских школ"
-              </li>
-              <li>С 2015 года в e-commerce</li>
-            </ul>
-          </div>
-          <div class="speaker">
-            <div class="speaker__img-wrap">
-              <img src="./assets/img/mihail.png" alt="" class="speaker__img" width="290" />
-            </div>
-            <h3 class="speaker__title">Михаил Касаткин</h3>
-            <ul class="speaker__list">
-              <li>Социальный психолог, бизнес-коуч</li>
-              <li>Основатель книжного бизнес-клуба “Императив”</li>
-              <li>Эксперт по личной эффективности</li>
-            </ul>
-          </div>
-          <div class="speaker">
-            <div class="speaker__img-wrap">
-              <img src="./assets/img/oksana.png" alt="" class="speaker__img" width="290" />
-            </div>
-            <h3 class="speaker__title">Оксана Ворона</h3>
-            <ul class="speaker__list">
-              <li>Специалист в области закупок</li>
-              <li>15-летний опыт работы с Китаем</li>
-              <li>Свободное владение китайским языком</li>
-              <li>С 2018 года в e-commerce</li>
-            </ul>
-          </div>
-          <div class="speaker">
-            <div class="speaker__img-wrap">
-              <img src="./assets/img/anastasia.png" alt="" class="speaker__img" width="290" />
-            </div>
-            <h3 class="speaker__title">Анастасия Яшковская</h3>
-            <ul class="speaker__list">
-              <li>
-                Специалист в области разрешительной документации и
-                сертификации
-              </li>
-              <li>6-летний опыт в работе с брендом и Честным знаком</li>
-            </ul>
-          </div>
-          <div class="speaker">
-            <div class="speaker__img-wrap">
-              <img src="./assets/img/kostantin.png" alt="" class="speaker__img" width="290" />
-            </div>
-            <h3 class="speaker__title">Константин Никулин</h3>
-            <ul class="speaker__list">
-              <li>Коммерческий директор MPBoost</li>
-              <li>15 лет в продажах</li>
-              <li>10 лет в управлении продаж (200+ сотрудников)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="questions" id="quetions">
-      <div class="container questions__container">
-        <h2 class="questions__title">Остались вопросы?</h2>
-        <form action="/" class="quetions__form form" method="post">
-          <h3 class="form__title">
-            <span>Остались вопросы?</span>Заполните форму:
-          </h3>
-          <label for="user-name">
-            Ваше Имя:
-            <input type="text" name="user-name" id="user-name" placeholder="Иван" />
-          </label>
-          <label for="user-phone">
-            Ваш телефон:
-            <input type="tel" name="user-phone input-phone" id="user-phone" placeholder="+7 (995) 777-22-21" />
-          </label>
-          <!-- <label for="user-telegram">
+            <label for="user-name">
+              Ваше Имя:
+              <input
+                type="text"
+                name="user-name"
+                id="user-name"
+                placeholder="Иван"
+              />
+            </label>
+            <label for="user-phone">
+              Ваш телефон:
+              <input
+                type="tel"
+                name="user-phone input-phone"
+                id="user-phone"
+                placeholder="+7 (995) 777-22-21"
+              />
+            </label>
+            <!-- <label for="user-telegram">
           Ник в Telegram:
           <input type="text" name="user-telegram" id="user-telegram" placeholder="@telegram">
         </label> -->
-          <label for="user-mail">
-            Ваша почта
-            <input type="email" name="user-mail" id="user-mail" placeholder="example@mail.ru" required />
-          </label>
-          <a href="./pages/privat.html" class="form__link" target="_blank">Я даю согласие на обработку
-            <span>персональных данных</span></a>
-          <button type="submit" class="form__btn">
-            <span class="form__btn-span"></span><span class="form__btn-text">Отправить</span>
-          </button>
-        </form>
+            <label for="user-mail">
+              Ваша почта
+              <input
+                type="email"
+                name="user-mail"
+                id="user-mail"
+                placeholder="example@mail.ru"
+                required
+              />
+            </label>
+            <a href="./pages/privat.html" class="form__link" target="_blank"
+              >Я даю согласие на обработку <span>персональных данных</span></a
+            >
+            <button type="submit" class="form__btn">
+              <span class="form__btn-span"></span
+              ><span class="form__btn-text">Отправить</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="reg__footer footer">
+      <div class="container">
+        <div class="footer__left">
+          <a href="/" class="footer__link oferta" target="_blank"
+            >Договор оферты</a
+          >
+          <a href="/" class="footer__link privacy" target="_blank"
+            >Политика конфиденциальности</a
+          >
+        </div>
+        <div class="footer__center">
+          <p class="footer__text">Индивидуальный предприниматель</p>
+          <p class="footer__text ip-name">имя</p>
+          <p class="footer__text ip-inn">инн</p>
+          <p class="footer__text ip-ogrnip">огрнип</p>
+        </div>
+        <div class="footer__right">
+          <a
+            href="mailto:info@marketplace-academica.ru"
+            class="footer__link ip-mail"
+            >info@marketplace-academica.ru</a
+          >
+        </div>
       </div>
-    </section>
-  </main>
-  <footer class="reg__footer footer">
-    <div class="container">
-      <div class="footer__left">
-        <a href="/" class="footer__link oferta" target="_blank">Договор оферты</a>
-        <a href="/" class="footer__link privacy" target="_blank">Политика конфиденциальности</a>
-      </div>
-      <div class="footer__center">
-        <p class="footer__text">Индивидуальный предприниматель</p>
-        <p class="footer__text ip-name">имя</p>
-        <p class="footer__text ip-inn">инн</p>
-        <p class="footer__text ip-ogrnip">огрнип</p>
-      </div>
-      <div class="footer__right">
-        <a href="mailto:info@marketplace-academica.ru" class="footer__link ip-mail">info@marketplace-academica.ru</a>
-      </div>
-    </div>
-  </footer>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <script src="./scripts/timer.js"></script>
-  <!-- <script src="./scripts/jquery.inputmask-multi.min.js"></script>
+    </footer>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="./scripts/timer.js"></script>
+    <!-- <script src="./scripts/jquery.inputmask-multi.min.js"></script>
   <script src="./scripts/jquery.inputmask.bundle.js"></script> -->
-  <script src="./scripts/main.js"></script>
-  <script src="./scripts/main-form.js"></script>
-  <!-- <script src="./scripts/main-test.js"></script> -->
-  <!-- <script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/main-form.js"></script>
+    <!-- <script src="./scripts/main-test.js"></script> -->
+    <!-- <script>
     var listCountries = $.masksSort(
       $.masksLoad("../scripts/phone-codes.json"),
       ["#"],
@@ -729,41 +957,44 @@
       })
     );
   </script> -->
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function (m, e, t, r, i, k, a) {
-      m[i] =
-        m[i] ||
-        function () {
-          (m[i].a = m[i].a || []).push(arguments);
-        };
-      m[i].l = 1 * new Date();
-      (k = e.createElement(t)),
-        (a = e.getElementsByTagName(t)[0]),
-        (k.async = 1),
-        (k.src = r),
-        a.parentNode.insertBefore(k, a);
-    })(
-      window,
-      document,
-      "script",
-      "https://mc.yandex.ru/metrika/tag.js",
-      "ym"
-    );
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-    ym(89624411, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true,
-    });
-  </script>
-  <noscript>
-    <div>
-      <img src="https://mc.yandex.ru/watch/89624411" style="position: absolute; left: -9999px" alt="" />
-    </div>
-  </noscript>
-  <!-- /Yandex.Metrika counter -->
-</body>
-
+      ym(89624411, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/89624411"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
 </html>
