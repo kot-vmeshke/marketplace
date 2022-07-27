@@ -26,38 +26,6 @@
     }
   }
 
-  &__subtitle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 132.2%;
-    text-align: center;
-    color: $color-bg-light;
-    padding: 7px 13px;
-    margin: 0 auto 25px;
-    border-radius: 4px;
-    background: $gradient-project;
-    & span {
-      display: inline-block;
-      margin-left: 5px;
-      font-weight: 700;
-    }
-  }
-  &__step {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 132.2%;
-    text-align: center;
-    color: $color-text;
-    opacity: 0.6;
-    margin-bottom: 50px;
-  }
   &__wrap {
     background: #F9F9F9;
     box-shadow: 0px 12px 37px rgba(0, 0, 0, 0.12);
@@ -187,352 +155,6 @@
     }
   }
 
-  &__order {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    color: #939393;
-    margin-bottom: 13px;
-    display: block;
-  }
-
-  &__logo {
-    width: 154px;
-    height: 61px;
-    margin: 0 auto;
-    background: url('../assets/svg/logo.svg') no-repeat center / contain;
-  }
-
-  &__user-data {
-    background: #FFFFFF;
-    border-radius: 13px;
-    padding: 8px;
-    padding-left: 64px;
-    position: relative;
-    margin-bottom: 13px;
-    &::before {
-      position: absolute;
-      content: '';
-      width: 40px;
-      height: 40px;
-      top: calc(50% - 20px);
-      left: 14px;
-      background: url('../assets/svg/User.svg') no-repeat center / contain;
-    }
-  }
-
-  &__user-name {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 172.5%;
-    text-align: left;
-    color: #000000;
-    display: block;
-  }
-
-  &__user-mail,
-  &__user-phone {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 172.5%;
-    text-align: left;
-    color: #000000;
-    display: block;
-  }
-
-  &__promo {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    & .promo {
-      background: #FFFFFF;
-      border-radius: 8px;
-      box-shadow: none;
-      padding: 10px 15px;
-      font-family: $font-main;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 14px;
-      color: $color-reserch;
-      height: 42px;
-      &::placeholder {
-        font-family: $font-main;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        color: $color-reserch;
-        opacity: 0.5;
-        text-decoration: underline;
-      }
-    }
-
-    & .promo-btn {
-      position: absolute;
-      background: $color-project;
-      display: block;
-      width: 125px;
-      height: 42px;
-      top: 0px;
-      right: 0px;
-      border: none;
-      cursor: pointer;
-      color: $color-light;
-      font-family: $font-main;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 14px;
-      text-transform: uppercase;
-    }
-    
-  }
-  &__promo-text {
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14.888px;
-    line-height: 140%;
-    color: $color-project;
-    text-align: center;
-    margin: 0 0 25px;
-    display: block;
-  }
-
-  &__set1 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 35px;
-    & input {
-      display: none;
-      &:checked + label {
-        background-color: #8E8DFF;
-        &::after {
-          color: #5756E8;
-          opacity: 1;
-        }
-      }
-    }
-    & label {
-      width: 72px;
-      height: 72px;
-      border-radius: 13px;
-      position: relative;
-      cursor: pointer;
-      background-color: #CDCDFB;
-      @media (max-width: 768px) {
-        width: 50px;
-        height: 50px;
-      }
-      &:hover {
-        background-color: #B0AFFF;
-        &::after {
-          opacity: 1;
-        }
-      }
-      &::after {
-        position:absolute;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        text-align: center;
-        bottom: -17px;
-        left: 50%;
-        transform: translate(-58%, 0);
-        width: 100%;
-        color: $color-text;
-        opacity: 0.5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media (max-width: 768px) {
-          font-size: 9px;
-          line-height: 12px;
-        }
-      }
-      &.card {
-        background-image: url('../assets/svg/card.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      &.card::after {
-        content: 'Карта';
-      }
-      &.part{
-        background-image: url('../assets/svg/part.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      &.part::after {
-        content: 'Рассрочка';
-      }
-      &.prepay {
-        background-image: url('../assets/svg/wallet.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      &.prepay::after {
-        content: 'Предоплата';
-      }
-      &.ip-ooo {
-        background-image: url('../assets/svg/retro-bag.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      &.ip-ooo::after {
-        content: 'ИП/ООО';
-      }
-    }
-  }
-
-  &__set2 {
-    display: flex;
-    justify-content: center;
-    & input {
-      display: none;
-      &:checked + label {
-        box-shadow: 0px 0px 12px rgba(142, 141, 255, 0.31);
-        border: 1px solid #6564DD;
-        &::before {
-          position: absolute;
-          content: '';
-          top: -5px;
-          right: 5px;
-          background: url('../assets/svg/checked.svg') no-repeat center / contain;
-          width: 24px;
-          height: 24px;
-        }
-      }
-    }
-    & label {
-      width: 190px;
-      height: 80px;
-      background: #FFFFFF;
-      border-radius: 8px;
-      cursor: pointer;
-      &:not(:last-child) {
-        margin-right: 18px;
-      }
-      transition: 0.3s;
-      position: relative;
-      @media (max-width: 768px) {
-        width: 100%;
-        max-width: 150px;
-        height: 70px;
-      }
-      &[for=robokassa] {
-        background: #FFFFFF url('../assets/img/robokassa.png') no-repeat center;
-        background-size: 100%;
-        &::after {
-          position: absolute;
-          width: 100%;
-          content: 'Карты РФ';
-          display: block;
-          text-align: center;
-          bottom: -30px;
-          font-size: 14px;
-          text-indent: 0px;
-          @media (max-width: 768px) {
-            font-size: 10px;
-          }
-        }
-      }
-      &[for=prodamus] {
-        background: #FFFFFF url('../assets/img/prodamus.png') no-repeat center;
-        background-size: 100%;
-        &::after {
-          position: absolute;
-          width: 100%;
-          content: 'РФ, СНГ, др. страны';
-          display: block;
-          text-align: center;
-          bottom: -30px;
-          font-size: 14px;
-          text-indent: 0px;
-          @media (max-width: 768px) {
-            font-size: 10px;
-          }
-        }
-      }
-    }
-  }
-
-  & .months {
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: 480px) {
-      flex-direction: column;
-      align-items: center;
-    }
-    & input {
-      display: none;
-      &:checked + label {
-        border: 1px solid #6564DD;
-      }
-    }
-    & label {
-      background: #F0F0FF;
-      border: 1px solid #F0F0FF;
-      border-radius: 16px;
-      padding: 10px 5px;
-      font-family: $font-main;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 25px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: $color-text;
-      text-indent: 0px;
-      max-width: 105px;
-      @media (max-width: 480px) {
-        max-width: 100%;
-      }
-      &:hover {
-        border: 1px solid #6564DD;
-      }
-    }
-  }
-
-  &__ip {
-    display: none;
-  }
-  &__ip-text {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 140%;
-    text-align: center;
-    color: #FF0000;
-    margin-bottom: 30px;
-    & span:not(.ip-text__user-id) {
-      display: block;
-      margin-top: 10px;
-      color: #000000;
-    }
-  }
-  &__partpay {
-    display: none;
-  }
-
   &__price {
     font-family: $font-accent;
     font-style: normal;
@@ -545,20 +167,63 @@
     margin-bottom: 7px;
     margin-top: 30px;
   }
-  
-  &__partpay-text {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: $color-reserch;
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 400;
+}
+.form__text {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  color: $color-text;
+  margin-bottom: 7px;
+  width: 100%;
+  margin-bottom: 16px;
+  text-indent: 10px;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
+.rates__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  & .rate__btn {
+    display: none;
+    &:checked + label {
+      background: #6564DD;
+      color: $color-light;
+    }
   }
 
-}
-.tab-2 {
-  display: none;
+  & .rate__label {
+    background: #F0F0FF;
+    border: 1px solid #F0F0FF;
+    border-radius: 16px;
+    padding: 10px;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: $color-text;
+    text-indent: 0px;
+    width: 100%;
+    @media (max-width: 480px) {
+      max-width: 100%;
+    }
+    &:hover {
+      border: 1px solid #6564DD;
+    }
+  }
 }
 
 .reg {
