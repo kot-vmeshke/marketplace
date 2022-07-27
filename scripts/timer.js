@@ -1,7 +1,15 @@
 const countdown = () => {
-  const countDate = new Date("Jul 27, 2022 00:00:00").getTime();
+  let countDate = new Date("Jul 28, 2022 00:00:00").getTime();
   const now = new Date().getTime();
-  const remainingTime = countDate - now;
+  let remainingTime = countDate - now;
+  if (remainingTime < 0) {
+    countDate = new Date("Aug 1, 2022 00:00:00").getTime();
+    remainingTime = countDate - now;
+    if (remainingTime < 0) {
+      countDate = new Date("Aug 6, 2022 00:00:00").getTime();
+      remainingTime = countDate - now;
+    }
+  }
 
   const second = 1000;
   const minute = second * 60;
