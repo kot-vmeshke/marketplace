@@ -715,7 +715,7 @@ html {
 }
 .prof__content-wrap {
   display: flex;
-  margin-bottom: 88px;
+  margin-bottom: 30px;
 }
 @media (max-width: 1200px) {
   .prof__content-wrap {
