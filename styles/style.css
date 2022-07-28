@@ -2025,6 +2025,7 @@ html {
 }
 .reg .widget-wrap {
   min-height: 988px;
+  width: 100%;
 }
 .reg .price__salary {
   max-width: -webkit-max-content;
