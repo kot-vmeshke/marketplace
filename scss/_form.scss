@@ -1,10 +1,12 @@
+.gc-user-guest {
+  background: #F9F8FF;
+}
 .reg {
   width: 100%;
   background: #F9F8FF;
 
   &__container {
     display: flex;
-    align-items: center;
     flex-direction: column;
   }
 
@@ -26,204 +28,32 @@
     }
   }
 
-  &__wrap {
-    background: #F9F9F9;
-    box-shadow: 0px 12px 37px rgba(0, 0, 0, 0.12);
-    border-radius: 15px;
-    max-width: 420px;
-    width: 100%;
-    padding: 35px 25px;
-    margin: 0 auto 170px;
-    overflow: hidden;
-    position: relative;
-    & label {
-      display: flex;
-      flex-direction: column;
-      font-family: $font-main;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 19px;
-      line-height: 140%;
-      color: $color-text;
-      margin-bottom: 7px;
-      width: 100%;
-      margin-bottom: 16px;
-      text-indent: 10px;
-      @media (max-width: 1024px) {
-        font-size: 14px;
-      }
-    }
-    & input {
-      border: none;
-      background: #FFFFFF;
-      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.03);
-      border-radius: 6px;
-      padding: 15px 11px;
-      width: 100%;
-      height: 60px;
-      font-family: $font-main;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 22px;
-      color: $color-text;
-      @media (max-width: 1024px) {
-        font-size: 16px;
-        padding: 10px 7px;
-        height: 42px;
-      }
-      &::placeholder {
-        font-family: $font-main;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 22px;
-        color: $color-text;
-        opacity: 0.4;
-        @media (max-width: 1024px) {
-          font-size: 16px;
-        }
-      }
-    }
+  .widget-wrap {
+    min-height: 988px;
   }
-
-  &__link {
-    text-decoration: none;
+  .price__salary {
+    max-width: max-content;
+    margin: 0 auto;
     font-family: $font-main;
     font-style: normal;
     font-weight: 300;
-    font-size: 14.888px;
-    line-height: 140%;
-    color: #9E9E9E;
+    font-size: 23px;
+    line-height: 132.2%;
     text-align: center;
-    margin: 25px 0;
-    display: block;
-    & span {
-      font-weight: 500;
-      color: $color-reserch;
-      text-decoration: underline;
-    }
-  }
-
-  &__btn {
-    border: none;
+    color: $color-bg-light;
+    padding: 10px 16px;
+    border-radius: 6px;
     background: $gradient-project;
-    box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(255, 255, 255, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(255, 255, 255, 0.12);
-    overflow: hidden;
-    text-decoration: none;
-    flex-shrink: 0;
-    border-radius: 12px;
-    position: relative;   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 35px 45px;
-    width: 100%;
-    max-width: 367px;
-    margin: 0 auto;
-    transition: 0.3s;
-    cursor: pointer;
-    @media (max-width: 1024px) {
-      padding: 35px;
-    }
-    &:hover {
-      box-shadow: 0px 4px 12px rgba(6, 6, 6, 0.25), inset 0px 6.47328px 7.28244px rgba(0, 0, 0, 0.18), inset 10.5191px -1.61832px 17.8015px rgba(0, 0, 0, 0.12);
-    }
-  }
-
-  &__btn-span {
-    background-image: url('../assets/img/btn-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    mix-blend-mode: color-burn;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__btn-text {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 143.7%;
-    text-align: center;
-    color: $color-light;
-    text-transform: uppercase;
     @media (max-width: 1024px) {
       font-size: 16px;
-      line-height: 21px;
+    }
+
+    &_span {
+      font-weight: 700;
+      margin-left: 5px;
     }
   }
 
-  &__price {
-    font-family: $font-accent;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 79px;
-    text-align: center;
-    color: $color-text;
-    display: block;
-    margin-bottom: 7px;
-    margin-top: 30px;
-  }
-}
-.form__text {
-  font-family: $font-main;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 140%;
-  color: $color-text;
-  margin-bottom: 7px;
-  width: 100%;
-  margin-bottom: 16px;
-  text-indent: 10px;
-  @media (max-width: 1024px) {
-    font-size: 14px;
-  }
-}
-
-.rates__wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  & .rate__btn {
-    display: none;
-    &:checked + label {
-      background: #6564DD;
-      color: $color-light;
-    }
-  }
-
-  & .rate__label {
-    background: #F0F0FF;
-    border: 1px solid #F0F0FF;
-    border-radius: 16px;
-    padding: 10px;
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: $color-text;
-    text-indent: 0px;
-    width: 100%;
-    @media (max-width: 480px) {
-      max-width: 100%;
-    }
-    &:hover {
-      border: 1px solid #6564DD;
-    }
-  }
 }
 
 .reg {
@@ -237,6 +67,7 @@
     font-weight: 400;
     font-size: 21px;
     line-height: 132.2%;
+    margin-top: auto;
     & .container {
       padding: 52px 20px;
       display: flex;
