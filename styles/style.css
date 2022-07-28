@@ -1615,7 +1615,6 @@ html {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 60px;
   background: #F6F6F6;
   box-shadow: 8px 0px 22px rgba(0, 0, 0, 0.17);
   border-radius: 18px;
