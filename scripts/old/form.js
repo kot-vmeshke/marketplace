@@ -67,10 +67,7 @@ function form() {
 
   const set1 = document.querySelector(".reg__set1");
   set1.addEventListener("click", (event) => {
-    if (
-      event.target.classList.contains("js-radio-set1") &&
-      event.target.classList.contains("ip-ooo")
-    ) {
+    if (event.target.classList.contains("js-radio-set1") && event.target.classList.contains("ip-ooo")) {
       set2.style.display = "none";
       regIp.style.display = "block";
       price.style.marginTop = "0";
@@ -82,10 +79,7 @@ function form() {
       } else {
         price.innerText = `${localStorage.getItem("price")}₽`;
       }
-    } else if (
-      event.target.classList.contains("js-radio-set1") &&
-      event.target.classList.contains("part")
-    ) {
+    } else if (event.target.classList.contains("js-radio-set1") && event.target.classList.contains("part")) {
       set2.style.display = "none";
       regPart.style.display = "block";
       price.style.marginTop = "0";
@@ -111,10 +105,7 @@ function form() {
           price.innerText = `от ${cost}₽/мес`;
         }
       });
-    } else if (
-      event.target.classList.contains("js-radio-set1") &&
-      event.target.classList.contains("card")
-    ) {
+    } else if ( event.target.classList.contains("js-radio-set1") && event.target.classList.contains("card") ) {
       set2.style.display = "";
       price.style.marginTop = "";
       regIp.style.display = "";
@@ -126,10 +117,7 @@ function form() {
       } else {
         price.innerText = `${localStorage.getItem("price")}₽`;
       }
-    } else if (
-      event.target.classList.contains("js-radio-set1") &&
-      event.target.classList.contains("prepay")
-    ) {
+    } else if ( event.target.classList.contains("js-radio-set1") && event.target.classList.contains("prepay") ) {
       set2.style.display = "";
       price.style.marginTop = "";
       regIp.style.display = "";
@@ -167,55 +155,55 @@ function form() {
         utm_campaign: utmCampaign,
         utm_group: utmGroup,
       });
-      if (
-        localStorage.getItem("guid") === "be2d5df5-6735-463c-8e32-648dc62d15b1"
-      ) {
-        let archive = [];
-        function allStorage() {
-          let keys = Object.keys(localStorage);
-          let i = 0;
-          let key;
+      // if (
+      //   localStorage.getItem("guid") === "be2d5df5-6735-463c-8e32-648dc62d15b1"
+      // ) {
+      //   let archive = [];
+      //   function allStorage() {
+      //     let keys = Object.keys(localStorage);
+      //     let i = 0;
+      //     let key;
 
-          for (; (key = keys[i]); i++) {
-            archive.push(key + "=" + localStorage.getItem(key));
-          }
+      //     for (; (key = keys[i]); i++) {
+      //       archive.push(key + "=" + localStorage.getItem(key));
+      //     }
 
-          return archive;
-        }
-        allStorage();
-        let nav = [];
-        for (var property in navigator) {
-          nav.push(`${property}=${navigator[property]}`);
-        }
-        fetch("https://marketplace-academica.ru/academica/tech/frontend_logs", {
-          method: "post",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            console: console.everything,
-            local_storage: archive,
-            browser: navigator,
-            name: "update_userdata",
-          }),
-        })
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              alert(`${response.status}: ${response.statusText}`);
-              throw new Error(`${response.status}: ${response.statusText}`);
-            }
-          })
-          .then((data) => {
-            console.log(data);
-            if (data.error == 1) {
-              alert(`Error: ${data.message}`);
-              throw new Error(`Error: ${data.message}`);
-            }
-          });
-      }
+      //     return archive;
+      //   }
+      //   allStorage();
+      //   let nav = [];
+      //   for (var property in navigator) {
+      //     nav.push(`${property}=${navigator[property]}`);
+      //   }
+      //   fetch("https://marketplace-academica.ru/academica/tech/frontend_logs", {
+      //     method: "post",
+      //     headers: {
+      //       Accept: "application/json",
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       console: console.everything,
+      //       local_storage: archive,
+      //       browser: navigator,
+      //       name: "update_userdata",
+      //     }),
+      //   })
+      //     .then((response) => {
+      //       if (response.ok) {
+      //         return response.json();
+      //       } else {
+      //         alert(`${response.status}: ${response.statusText}`);
+      //         throw new Error(`${response.status}: ${response.statusText}`);
+      //       }
+      //     })
+      //     .then((data) => {
+      //       console.log(data);
+      //       if (data.error == 1) {
+      //         alert(`Error: ${data.message}`);
+      //         throw new Error(`Error: ${data.message}`);
+      //       }
+      //     });
+      // }
       fetch(
         "https://marketplace-academica.ru/academica/update_userdata?" +
         new URLSearchParams({
