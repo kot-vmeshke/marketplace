@@ -1,0 +1,26 @@
+============ Ассистент + аккаунт-менеджер Wildberries =============
+  data-id="3544961"
+  data-price="23000"
+  data-part6="20000"
+  data-part10="21000"
+  data-part12="22000"
+  data-title="Ассистент + аккаунт-менеджер Wildberries"
+  data-salary="45 000"
+
+============ Research manager + Специалист отдела закупок =============
+  data-id="3544966"
+  data-price="38000"
+  data-part6="36600"
+  data-part10="38200"
+  data-part12="39200"
+  data-title="Research manager + Специалист отдела закупок"
+  data-salary="75 000"
+
+============ Project manager / Управляющий проектом =============
+  data-id="3544972"
+  data-price="53000"
+  data-part6="53250"
+  data-part10="55800"
+  data-part12="56900"
+  data-title="Project manager / Управляющий проектом"
+  data-salary="90 000"
