@@ -58,6 +58,17 @@ window.addEventListener('load', () => {
   const inputSurname = document.querySelector("#user-surname");
   const inputFathername = document.querySelector("#user-fathername");
 
+  /* данные из ответа сервера */
+  let resName;
+  let resEmail;
+  let resPhone;
+  let resOrder;
+  let resCost;
+  let resOferta;
+  let resPolicy;
+  let resOrgName;
+  let resOrgData;
+
   /* в зависимости от выбранного тарифа присваиваем переменным значения */
   switch (currentTarif) {
     case '3544961':
@@ -157,23 +168,37 @@ window.addEventListener('load', () => {
           } else { // если все норм
             spinner.classList.add('hidden'); // скрываем прелоадер
             console.log(data);
+
+            /* сохраняем денные из ответа */
+            resName = data.data.user.name;
+            resEmail = data.data.user.email;
+            resPhone = data.data.user.phone;
+            resOrder = data.data.order_data.order_id;
+            resCost = data.data.order_data.cost;
+            resOferta = data.data.ul_data.oferta;
+            resPolicy = data.data.ul_data.conf_policy;
+            resOrgName = data.data.ul_data.org_name;
+            resOrgData = data.data.ul_data.org_data;
+
             /* скрываем первую часть формы и показываем вторую */
             tab1.style.display = "none";
             tab2.style.display = "block";
 
             /* выводим данные пользователя */
-            order.innerText = `Заказ №${data.data.order_data.order_id}`;
-            userName.innerText = data.data.user.name;
-            userPhone.innerText = data.data.user.phone;
-            userMail.innerText = data.data.user.email;
-            price.innerText = `${data.data.order_data.cost}₽`;
-            ipTextUserId.innerText = `id-${data.data.order_data.order_id}`;
+            order.innerText = `Заказ №${resOrder}`;
+            userName.innerText = resName;
+            userPhone.innerText = resPhone;
+            userMail.innerText = resEmail;
+            price.innerText = `${resCost}₽`;
+            ipTextUserId.innerText = `id-${resOrder}`;
 
             /* выводим данные в футер и показываем его */
-            document.querySelector(".oferta").setAttribute("href", data.data.ul_data.oferta);
-            document.querySelector(".privacy").setAttribute("href", data.data.ul_data.conf_policy);
-            document.querySelector(".footer__center").innerText = `${data.data.ul_data.org_name}${data.data.ul_data.org_data}`;
+            document.querySelector(".oferta").setAttribute("href", resOferta);
+            document.querySelector(".privacy").setAttribute("href", resPolicy);
+            document.querySelector(".footer__center").innerText = `${resOrgName}${resOrgData}`;
             footer.style.display = 'block';
+
+
           }          
         }
       }
@@ -191,7 +216,7 @@ window.addEventListener('load', () => {
       regPart.style.display = "";
       robokassa.checked = false;
       regBtn.querySelector(".reg__btn-text").innerText = "Перейти к оплате";
-      price.innerText = `${data.data.order_data.cost}₽`;
+      price.innerText = `${resCost}₽`;
     } else if (event.target.classList.contains("js-radio-set1") && event.target.classList.contains("part")) { // рассрочка
       set2.style.display = "none";
       regPart.style.display = "block";
@@ -225,7 +250,7 @@ window.addEventListener('load', () => {
       regPart.style.display = "";
       regBtn.querySelector(".reg__btn-text").innerText = "Перейти к оплате";
       robokassa.checked = true;
-      price.innerText = `${data.data.order_data.cost}₽`;
+      price.innerText = `${resCost}₽`;
     } else if ( event.target.classList.contains("js-radio-set1") && event.target.classList.contains("prepay") ) { // предоплата 2000
       set2.style.display = "";
       price.style.marginTop = "";
@@ -240,8 +265,8 @@ window.addEventListener('load', () => {
   /* кнопка перехода на оплату */
   regBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    if (ip.checked) {
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value || "000000000"}&email=${data.data.user.email}`, 
+    if (ip.checked) { // ИП
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&merchant=tinkoff_ul&ul_name=${inputIp.value}&inn=${inputInn.value}&kpp=${inputKpp.value || "000000000"}&email=${resEmail}`, 
       {
         method: "POST",
       })
@@ -265,9 +290,10 @@ window.addEventListener('load', () => {
             window.open(`${data.data.payment_link}`, "_blank").focus();
           }
         });
-    } else if (part.checked) {
+    } else if (part.checked) { // рассрочка
+      console.log(userPhone.innerText.substring(1));
       console.log(cost);
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(1)}&loan_cost=${partCost}&email=${data.data.user.email}`,
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&merchant=loan&loan_fname=${inputFullname.value}&loan_mname=${inputFathername.value}&loan_lname=${inputSurname.value}&loan_phone=${userPhone.innerText.substring(1)}&loan_cost=${partCost}&email=${resEmail}`,
         {
           method: "POST",
         }
@@ -287,8 +313,8 @@ window.addEventListener('load', () => {
           alert(`${data.message}`);
           window.location.href = "../index.html";
         });
-    } else if (robokassa.checked && card.checked) {
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&email=${data.data.user.email}&merchant=robokassa`,
+    } else if (robokassa.checked && card.checked) { // робокасса полная
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&email=${resEmail}&merchant=robokassa`,
         {
           method: "POST",
         }
@@ -310,8 +336,8 @@ window.addEventListener('load', () => {
             window.location.href = data.data.payment_link;
           }
         });
-    } else if (prodamus.checked && card.checked) {
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&email=${data.data.user.email}&merchant=prodamus`,
+    } else if (prodamus.checked && card.checked) { // продамус полная
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&email=${resEmail}&merchant=prodamus`,
         {
           method: "POST",
         }
@@ -333,8 +359,8 @@ window.addEventListener('load', () => {
             window.location.href = data.data.payment_link;
           }
         });
-    } else if (robokassa.checked && prepay.checked) {
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&email=${data.data.user.email}&merchant=robokassa&prepay=1`,
+    } else if (robokassa.checked && prepay.checked) { // робокасса 2000
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&email=${resEmail}&merchant=robokassa&prepay=1`,
         {
           method: "POST",
         }
@@ -356,8 +382,8 @@ window.addEventListener('load', () => {
             window.location.href = data.data.payment_link;
           }
         });
-    } else if (prodamus.checked && prepay.checked) {
-      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${data.data.order_data.order_id}&email=${data.data.user.email}&merchant=prodamus&prepay=1`,
+    } else if (prodamus.checked && prepay.checked) { // продамус 2000
+      fetch(`https://marketplace-academica.ru/academica/generate_paylink?order_id=${resOrder}&email=${resEmail}&merchant=prodamus&prepay=1`,
         {
           method: "POST",
         }

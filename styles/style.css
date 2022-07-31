@@ -2597,6 +2597,10 @@ html {
   font-weight: 400;
 }
 
+.tab-2 {
+  display: none;
+}
+
 .reg__footer {
   display: none;
   width: 100%;
