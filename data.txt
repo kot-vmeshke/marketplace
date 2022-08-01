@@ -24,3 +24,5 @@
   data-part12="56900"
   data-title="Project manager / Управляющий проектом"
   data-salary="90 000"
+
+  https://marketplace-academica.ru/academica/generate_paylink?order_id=60031&merchant=tinkoff_ul&ul_name=%D0%98%D0%B2%D0%B0%D0%BD&inn=774311703256&kpp=000000000&email=seryi80@exp.com
