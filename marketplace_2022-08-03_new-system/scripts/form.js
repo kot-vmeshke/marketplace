@@ -369,16 +369,10 @@ window.addEventListener('load', () => {
             throw new Error(`${response.status}: ${response.statusText}`);
           } else { // если ответ пришел
             let data = JSON.parse(xhr.response);
-            console.log(data.data.order_data.back_link);
             if (data.error == 1) { // если пришел с ошибкой
-              if (data.message === 'order_is_exists') {
-                alert(`Вы уже создавали заказ по этому тарифу. Сейчас перенаправим вас на оплату уже созданного заказа.`);
-                spinner.classList.add('hidden');
-                window.location.href = data.data.order_data.back_link;
-              } else {
-                alert(`${data.message}`);
-                spinner.classList.add('hidden');
-              }
+              alert(`Error: ${data.message}`);
+              spinner.classList.add('hidden');
+              throw new Error(`Error: ${data.message}`);
             } else { // если все норм
               spinner.classList.add('hidden'); // скрываем прелоадер
               console.log(data);
@@ -388,8 +382,7 @@ window.addEventListener('load', () => {
               resEmail = data.data.user.email;          
               resPhone = data.data.user.phone;
               resOrder = data.data.order_data.order_id;
-              resCost = +data.data.order_data.cost;
-              console.log('resCost: ', resCost);
+              resCost = data.data.order_data.cost;
     
               /* скрываем первую часть формы и показываем вторую */
               tab1.style.display = "none";
@@ -404,7 +397,6 @@ window.addEventListener('load', () => {
               ipTextUserId.innerText = `id-${resOrder}`;    
     
               choosePayment(resCost, costPart6, costPart10, costPart12);
-              
               getPayLink(resOrder, resEmail);
     
             }          
@@ -444,7 +436,7 @@ window.addEventListener('load', () => {
         resEmail = data.data.user.email;
         resPhone = data.data.user.phone;
         resOrder = data.data.order.order_id;
-        resCost = +data.data.order.cost;
+        resCost = data.data.order.cost;
         resPlanID = data.data.order.plan_id;
         resOferta = data.data.org.oferta;
         resPolicy = data.data.org.conf_policy;
@@ -579,45 +571,45 @@ window.addEventListener('load', () => {
         pageTitle.innerText = "Ассистент + аккаунт-менеджер Wildberries";
         salary.innerText = 'от 45 000 руб.';
         fullCost = 23000;
-        if (promo) {
-          costPart6 = 22000; 
-          costPart10 = 23000; 
-          costPart12 = 24000;
-        } else {
-          costPart6 = 25500; 
-          costPart10 = 26500; 
-          costPart12 = 27000; 
-        }
+        // if (promo) {
+        //   costPart6 = 22000; 
+        //   costPart10 = 23000; 
+        //   costPart12 = 24000;
+        // } else {
+        //   costPart6 = 25500; 
+        //   costPart10 = 26500; 
+        //   costPart12 = 27000; 
+        // }
         planID = '3544961';
         break;
       case '3544966':
         pageTitle.innerText = "Research manager + Специалист отдела закупок";
         salary.innerText = 'от 75 000 руб.';
         fullCost = 38000;
-        if (promo) {
-          costPart6 = 38800; 
-          costPart10 = 40500; 
-          costPart12 = 41200;
-        } else {
-          costPart6 = 42000; 
-          costPart10 = 43800; 
-          costPart12 = 44500; 
-        }
+        // if (promo) {
+        //   costPart6 = 38800; 
+        //   costPart10 = 40500; 
+        //   costPart12 = 41200;
+        // } else {
+        //   costPart6 = 42000; 
+        //   costPart10 = 43800; 
+        //   costPart12 = 44500; 
+        // }
         planID = '3544966';
         break;
       case '3544972':
         pageTitle.innerText = "Project manager / Управляющий проектом";
         salary.innerText = 'от 90 000 руб.';
         fullCost = 53000;
-        if (promo) {
-          costPart6 = 54900; 
-          costPart10 = 57000; 
-          costPart12 = 59000;
-        } else {
-          costPart6 = 58700; 
-          costPart10 = 61000; 
-          costPart12 = 62500; 
-        }
+        // if (promo) {
+        //   costPart6 = 54900; 
+        //   costPart10 = 57000; 
+        //   costPart12 = 59000;
+        // } else {
+        //   costPart6 = 58700; 
+        //   costPart10 = 61000; 
+        //   costPart12 = 62500; 
+        // }
         planID = '3544972';
         break;
     }
@@ -658,5 +650,8 @@ window.addEventListener('load', () => {
         sendData();
 
       }})
+
+
+
   }
 })

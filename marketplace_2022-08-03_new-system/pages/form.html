@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academica - registration</title>
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <!-- Carrot quest BEGIN -->
+  <script type="text/javascript">
+    !(function () {
+      function t(t, e) {
+        return function () {
+          window.carrotquestasync.push(t, arguments);
+        };
+      }
+      if ("undefined" == typeof carrotquest) {
+        var e = document.createElement("script");
+        (e.type = "text/javascript"),
+          (e.async = !0),
+          (e.src = "https://cdn.carrotquest.app/api.min.js"),
+          document.getElementsByTagName("head")[0].appendChild(e),
+          (window.carrotquest = {}),
+          (window.carrotquestasync = []),
+          (carrotquest.settings = {});
+        for (
+          var n = [
+            "connect",
+            "track",
+            "identify",
+            "auth",
+            "onReady",
+            "addCallback",
+            "removeCallback",
+            "trackMessageInteraction",
+          ],
+          a = 0;
+          a < n.length;
+          a++
+        )
+          carrotquest[n[a]] = t(n[a]);
+      }
+    })(),
+      carrotquest.connect("51610-23145017e0c7c07689853e2057");
+  </script>
+  <!-- Carrot quest END -->
+</head>
+
+<body class="reg">
+  <div class="reg__container container">
+    <h1 class="reg__title">Ассистент + аккаунт-менеджер Wildberries</h1>
+    <div class="reg__subtitle">ЗП на рынке: <span>от 90 000 руб</span></div>
+    <form action="#" class="reg__form" method="post">
+      <div class="tab-1">
+        <h2 class="reg__step">Шаг 1. Заполните данные о себе</h2>
+        <div class="reg__wrap">
+          <label for="user-name">
+            Ваше Имя:
+            <input type="text" name="user-name" id="user-name" placeholder="Иван" required />
+          </label>
+          <label for="user-phone">
+            Ваш телефон:
+            <input type="tel" name="user-phone" id="user-phone" placeholder="+7 (995) 777-22-21" required
+              class="input-phone" />
+          </label>
+          <label for="user-mail">
+            Ваша почта
+            <input type="email" name="user-mail" id="user-mail" placeholder="example@mail.ru" required />
+          </label>
+          <div class="reg__promo">
+            <input type="text" class="promo" placeholder="есть промокод?" />
+            <button class="promo-btn" type="button">применить</button>
+          </div>
+          <p class="reg__promo-text">
+            Чтобы применить промокод, нажмите "Применить"
+          </p>
+          <a href="./privat.html" class="reg__link" target="_blank">Я даю согласие на обработку <span>персональных
+              данных</span></a>
+          <button type="button" class="reg__btn">
+            <span class="reg__btn-span"></span><span class="reg__btn-text">Отправить</span>
+          </button>
+        </div>
+      </div>
+      <div class="tab-2">
+        <h2 class="reg__step">Шаг 2. Выберите способ оплаты</h2>
+        <div class="reg__wrap">
+          <span class="reg__order">Заказ №000001</span>
+          <div class="reg__logo"></div>
+          <div class="reg__user-data">
+            <span class="reg__user-name">Виктор Пелевин</span>
+            <span class="reg__user-mail">pelevin@yandex.ru</span>
+            <span class="reg__user-phone">+79119111911</span>
+          </div>
+          <div class="reg__set1">
+            <input type="radio" name="set1" id="card" checked />
+            <label for="card" class="card js-radio-set1"></label>
+            <input type="radio" name="set1" id="part" />
+            <label for="part" class="part js-radio-set1"></label>
+            <input type="radio" name="set1" id="prepay" />
+            <label for="prepay" class="prepay js-radio-set1"></label>
+            <input type="radio" name="set1" id="ip-ooo" />
+            <label for="ip-ooo" class="ip-ooo js-radio-set1"></label>
+          </div>
+          <div class="reg__set2">
+            <input type="radio" name="set2" id="robokassa" checked />
+            <label for="robokassa"></label>
+            <input type="radio" name="set2" id="prodamus" />
+            <label for="prodamus"></label>
+          </div>
+          <div class="reg__ip">
+            <p class="reg__ip-text">
+              Внимание! В назначении платежа указывайте строго то наименование
+              услуги, что написано в&nbsp;счете. Иначе платеж может
+              обрабатываться от&nbsp;5&nbsp;рабочих дней.
+              <span>Ваше назначение платежа:</span>Оплата за услугу
+              дополнительного образования
+              <span class="ip-text__user-id">id-X</span>
+            </p>
+            <label for="user-ip">
+              Наименование компании:
+              <input type="text" name="user-ip" id="user-ip" placeholder="ИП Иван Сергеевич Иванов" required />
+            </label>
+            <label for="user-inn">
+              ИНН:
+              <input type="text" name="user-inn" id="user-inn" placeholder="7777777777" required />
+            </label>
+            <label for="user-kpp">
+              КПП:
+              <input type="text" name="user-kpp" id="user-kpp" placeholder="Оставьте пустым если нет КПП" />
+            </label>
+          </div>
+          <div class="reg__partpay">
+            <div class="months">
+              <input type="radio" name="set3" id="month-6" />
+              <label for="month-6" class="month">6 месяцев</label>
+              <input type="radio" name="set3" id="month-10" checked />
+              <label for="month-10" class="month">10 месяцев</label>
+              <input type="radio" name="set3" id="month-12" />
+              <label for="month-12" class="month">12 месяцев</label>
+            </div>
+            <p class="reg__partpay-text">
+              Рассрочка действует только для граждан РФ с&nbsp;российским
+              номером телефона
+            </p>
+            <label for="user-surname">
+              Фамилия:
+              <input type="text" name="user-surname" id="user-surname" placeholder="Иванов" required />
+            </label>
+            <label for="user-fullname">
+              Имя:
+              <input type="text" name="user-fullname" id="user-fullname" placeholder="Иван" required />
+            </label>
+            <label for="user-fathername">
+              Отчество:
+              <input type="text" name="user-fathername" id="user-fathername" placeholder="Сергеевич" required />
+            </label>
+          </div>
+          <span class="reg__price">48 000₽</span>
+          <button type="button" class="reg__btn btn-pay">
+            <span class="reg__btn-span"></span><span class="reg__btn-text">Перейти к оплате</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <footer class="reg__footer footer">
+    <div class="container">
+      <div class="footer__left">
+        <a href="https://docs.google.com/document/d/1Qbpj-ZhC4bZYp-ws21drnF-vjDmOjuOz/edit?usp=sharing&ouid=103853589422787133265&rtpof=true&sd=true"
+          class="footer__link oferta" target="_blank">Договор оферты</a>
+        <a href="https://docs.google.com/document/d/1Nqn0ZXm5xjLVbxRkRzDB7zubb-1LVPXu/edit?usp=sharing&ouid=103853589422787133265&rtpof=true&sd=true"
+          class="footer__link privacy" target="_blank">Политика конфиденциальности</a>
+      </div>
+      <div class="footer__center">
+        <p class="footer__text">Индивидуальный предприниматель</p>
+        <p class="footer__text ip-name">Рубцова Анастасия Валерьевна</p>
+        <p class="footer__text ip-inn">ИНН 501810848203</p>
+        <p class="footer__text ip-ogrnip">ОГРНИП 322508100316947</p>
+      </div>
+      <div class="footer__right">
+        <a href="mailto:info@marketplace-academica.ru" class="footer__link ip-mail">info@marketplace-academica.ru</a>
+      </div>
+    </div>
+  </footer>
+  <div id="preloader" class="hidden">
+    <div id="loader"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../scripts/jquery.inputmask-multi.min.js"></script>
+  <script src="../scripts/jquery.inputmask.bundle.js"></script>
+  <script>
+    var listCountries = $.masksSort(
+      $.masksLoad("../scripts/phone-codes.json"),
+      ["#"],
+      /[0-9]|#/,
+      "mask"
+    );
+
+    var maskOpts = {
+      inputmask: {
+        definitions: {
+          "#": {
+            validator: "[0-9]",
+            cardinality: 1,
+          },
+        },
+        showMaskOnHover: false,
+        autoUnmask: true,
+        clearMaskOnLostFocus: false,
+      },
+      match: /[0-9]/,
+      replace: "#",
+      listKey: "mask",
+    };
+
+    $(".input-phone").inputmasks(
+      $.extend(true, {}, maskOpts, {
+        list: listCountries,
+      })
+    );
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      "script",
+      "https://mc.yandex.ru/metrika/tag.js",
+      "ym"
+    );
+
+    ym(89624411, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true,
+    });
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/89624411" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <script src="../scripts/form.js"></script>
+</body>
+
+</html>
